@@ -531,20 +531,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Mobile Drawer Toggle
+  // Mobile Drawer Toggle & Overlay
   const hamburgerBtn = document.getElementById('hamburger-btn');
   const closeDrawerBtn = document.getElementById('close-drawer-btn');
   const mobileDrawer = document.getElementById('mobile-drawer');
 
+  const drawerOverlay = document.createElement('div');
+  drawerOverlay.className = 'mobile-drawer-overlay';
+  document.body.appendChild(drawerOverlay);
+
   function openMobileDrawer() {
     if (mobileDrawer) mobileDrawer.classList.add('open');
+    drawerOverlay.classList.add('open');
   }
   function closeMobileDrawer() {
     if (mobileDrawer) mobileDrawer.classList.remove('open');
+    drawerOverlay.classList.remove('open');
   }
 
   if (hamburgerBtn) hamburgerBtn.addEventListener('click', openMobileDrawer);
   if (closeDrawerBtn) closeDrawerBtn.addEventListener('click', closeMobileDrawer);
+  drawerOverlay.addEventListener('click', closeMobileDrawer);
 
   document.querySelectorAll('.mobile-link').forEach(link => {
     link.addEventListener('click', closeMobileDrawer);

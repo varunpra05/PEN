@@ -54,6 +54,8 @@
   .hamburger span{width:22px; height:2px; background:#fff; border-radius:2px;}
 
   /* MOBILE DRAWER */
+  .mobile-drawer-overlay{position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); backdrop-filter:blur(3px); z-index:190; opacity:0; visibility:hidden; transition:all 0.3s ease;}
+  .mobile-drawer-overlay.open{opacity:1; visibility:visible;}
   .mobile-drawer{position:fixed; top:0; right:-320px; width:280px; height:100vh; background:#0f172a; border-left:1px solid rgba(255,255,255,0.1); z-index:200; display:flex; flex-direction:column; padding:20px; transition:right 0.3s ease; box-shadow:-10px 0 30px rgba(0,0,0,0.5);}
   .mobile-drawer.open{right:0;}
   .mobile-drawer-header{display:flex; justify-content:space-between; align-items:center; padding-bottom:16px; border-bottom:1px solid rgba(255,255,255,0.1);}
@@ -765,4 +767,32 @@
     .trust-stats-inline{flex-direction:column; gap:10px;}
     .divider-line{display:none;}
     .trust-right-btns{flex-direction:column; width:100%;}
+  }
+
+  /* COMPREHENSIVE MOBILE RESPONSIVENESS ENHANCEMENTS */
+  @media(max-width:768px){
+    .container{padding-left:16px; padding-right:16px;}
+    .hero-banner-content h1, .about-hero-content h1, .plans-hero-content h1, .mkt-hero-content h1, .detail-hero-left h1{font-size:28px;}
+    .hero h1{font-size:28px;}
+    .hero-btns{flex-direction:column; width:100%;}
+    .hero-btns .btn{width:100%; text-align:center;}
+    .detail-hero-btns{flex-direction:column; width:100%;}
+    .detail-hero-btns .btn{width:100%; text-align:center;}
+    .benefits-grid-5{grid-template-columns:1fr;}
+    .solutions-grid-6{grid-template-columns:1fr;}
+    .values-grid{grid-template-columns:1fr 1fr;}
+  }
+
+  @media(max-width:480px){
+    .phone span{display:none;}
+    .nav-right .btn-primary{padding:6px 10px; font-size:11.5px;}
+    .services-dark-grid{grid-template-columns:1fr;}
+    .services-full-grid{grid-template-columns:1fr;}
+    .process-cards-grid{grid-template-columns:1fr;}
+    .hero-stats-row{grid-template-columns:1fr 1fr;}
+    .story-stats-grid{grid-template-columns:1fr;}
+    .values-grid{grid-template-columns:1fr;}
+    .team-grid{grid-template-columns:1fr;}
+    .goals-grid{grid-template-columns:1fr 1fr;}
+    .modal-content{padding:24px 18px; width:94%;}
   }
