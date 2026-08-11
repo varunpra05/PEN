@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stock Market Investment - InvestPro Advisory</title>
+<meta name="description" content="Invest in top-performing stocks backed by expert research and real-time market insights with InvestPro's Stock Market Investment advisory.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="nav-wrap">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+          <polyline points="17 6 23 6 23 12"></polyline>
+        </svg>
+      </div>
+      <div>
+        <span class="logo-title">InvestPro</span>
+        <span class="logo-sub">Grow Your Wealth</span>
+      </div>
+    </a>
+    <nav id="desktop-nav">
+      <ul>
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="services.html" class="nav-link active">Services</a></li>
+        <li><a href="plans.html" class="nav-link">Investment Plans</a></li>
+        <li><a href="market.html" class="nav-link">Market</a></li>
+        <li><a href="index.html#blogs" class="nav-link">Blog</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a href="tel:+919876543210" class="phone">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+        <span>+91 98765 43210</span>
+      </a>
+      <button class="btn btn-primary" id="consult-btn">Book Free Consultation</button>
+      <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- MOBILE MENU OVERLAY / DRAWER -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">📈</div>
+        <div><span class="logo-title">InvestPro</span></div>
+      </a>
+      <button class="close-drawer" id="close-drawer-btn">&times;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-link">Home</a></li>
+      <li><a href="about.html" class="mobile-link">About Us</a></li>
+      <li><a href="services.html" class="mobile-link active">Services</a></li>
+      <li><a href="plans.html" class="mobile-link">Investment Plans</a></li>
+      <li><a href="market.html" class="mobile-link">Market</a></li>
+      <li><a href="index.html#blogs" class="mobile-link">Blog</a></li>
+      <li><a href="index.html#contact" class="mobile-link">Contact</a></li>
+    </ul>
+    <div class="mobile-drawer-footer">
+      <a href="tel:+919876543210" class="phone-mobile">📞 +91 98765 43210</a>
+      <button class="btn btn-primary w-full" id="mobile-consult-btn">Book Free Consultation</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO HEADER BANNER -->
+<section class="detail-hero-banner">
+  <div class="container detail-hero-grid">
+    <div class="detail-hero-left">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> <span>/</span> <a href="services.html">Services</a> <span>/</span> <span class="current-crumb">Stock Market Investment</span>
+      </div>
+      <span class="sub-badge-green">OUR SERVICE</span>
+      <h1>Stock Market<br>Investment</h1>
+      <p class="hero-desc">Invest in top-performing stocks backed by expert research and real-time market insights.</p>
+
+      <ul class="detail-bullet-list">
+        <li><span class="chk-icon">✔</span> Expert research-backed stock recommendations</li>
+        <li><span class="chk-icon">✔</span> Real-time market insights and trend analysis</li>
+        <li><span class="chk-icon">✔</span> Risk-managed strategies for long-term growth</li>
+        <li><span class="chk-icon">✔</span> Build wealth with trusted and proven investment approach</li>
+      </ul>
+
+      <div class="detail-hero-btns">
+        <button class="btn btn-primary" onclick="openConsultModal('Stock Market Investment')">Start Investing Now &rarr;</button>
+        <button class="btn btn-outline" onclick="openConsultModal()">Book Free Consultation</button>
+      </div>
+    </div>
+
+    <!-- RIGHT GRAPHIC & LIVE WIDGET -->
+    <div class="detail-hero-right">
+      <div class="live-widget-card">
+        <div class="widget-head">
+          <span class="w-name">NIFTY 50</span>
+          <b class="w-val">24,864.15</b>
+          <span class="w-chg">+308.40 (1.25%)</span>
+        </div>
+        <div class="widget-chart-wrap">
+          <svg viewBox="0 0 240 70" class="widget-spark">
+            <polyline points="0,55 30,45 60,50 90,30 120,40 150,20 180,25 210,10 240,15" fill="none" stroke="#22c55e" stroke-width="2.5"/>
+          </svg>
+        </div>
+        <div class="widget-tfs">
+          <span class="w-tf active">1D</span>
+          <span class="w-tf">1W</span>
+          <span class="w-tf">1M</span>
+          <span class="w-tf">1Y</span>
+          <span class="w-tf">5Y</span>
+        </div>
+      </div>
+
+      <!-- 3D BULL & COINS VISUAL -->
+      <div class="bull-3d-visual">
+        <div class="bull-glow"></div>
+        <div class="bull-icon-lg">🐂</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 1: POWERFUL BENEFITS FOR YOUR WEALTH GROWTH -->
+<section class="detail-section dark-bg">
+  <div class="container">
+    <div class="services-header-center" style="margin-bottom:40px;">
+      <span class="sub-badge-green">WHY CHOOSE STOCK MARKET INVESTMENT?</span>
+      <h2>Powerful Benefits for Your Wealth Growth</h2>
+      <p style="color:#94a3b8;">The stock market offers unmatched opportunities to grow your wealth and achieve your financial goals.</p>
+    </div>
+
+    <div class="benefits-grid-5">
+      <div class="benefit-card-dark">
+        <div class="b-ico-circle">📊</div>
+        <h4>High Growth Potential</h4>
+        <p>Invest in companies with strong fundamentals and high growth potential.</p>
+      </div>
+
+      <div class="benefit-card-dark">
+        <div class="b-ico-circle">📈</div>
+        <h4>Beat Inflation</h4>
+        <p>Equity investments have historically outperformed inflation over the long term.</p>
+      </div>
+
+      <div class="benefit-card-dark">
+        <div class="b-ico-circle">🍕</div>
+        <h4>Diversification</h4>
+        <p>Diversify across sectors and industries to reduce risk and maximize returns.</p>
+      </div>
+
+      <div class="benefit-card-dark">
+        <div class="b-ico-circle">🛡️</div>
+        <h4>Risk Management</h4>
+        <p>Our expert strategies help manage risks and protect your investments.</p>
+      </div>
+
+      <div class="benefit-card-dark">
+        <div class="b-ico-circle">💰</div>
+        <h4>Liquidity</h4>
+        <p>Easy to buy and sell anytime with high market liquidity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: COMPREHENSIVE SOLUTIONS -->
+<section class="detail-section dark-bg-alt">
+  <div class="container">
+    <div class="services-header-center" style="margin-bottom:40px;">
+      <span class="sub-badge-green">WHAT WE OFFER</span>
+      <h2>Comprehensive Stock Market Investment Solutions</h2>
+      <p style="color:#94a3b8;">From research to execution, we provide end-to-end support for your investment journey.</p>
+    </div>
+
+    <div class="solutions-grid-6">
+      <div class="sol-card-dark">
+        <div class="sol-ico">👤</div>
+        <h4>Expert Research</h4>
+        <p>In-depth analysis of companies, sectors and market trends.</p>
+      </div>
+
+      <div class="sol-card-dark">
+        <div class="sol-ico">⭐</div>
+        <h4>Stock Recommendations</h4>
+        <p>Curated list of high-potential stocks based on research and market data.</p>
+      </div>
+
+      <div class="sol-card-dark">
+        <div class="sol-ico">📊</div>
+        <h4>Real-time Insights</h4>
+        <p>Live market updates and insights to make informed investment decisions.</p>
+      </div>
+
+      <div class="sol-card-dark">
+        <div class="sol-ico">💼</div>
+        <h4>Portfolio Management</h4>
+        <p>Build a well-diversified portfolio aligned with your goals and risk profile.</p>
+      </div>
+
+      <div class="sol-card-dark">
+        <div class="sol-ico">🎯</div>
+        <h4>Performance Tracking</h4>
+        <p>Track your portfolio performance and get regular reports.</p>
+      </div>
+
+      <div class="sol-card-dark">
+        <div class="sol-ico">🎧</div>
+        <h4>Expert Support</h4>
+        <p>Get guidance from our SEBI registered investment advisors anytime.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: 4-STEP PROCESS -->
+<section class="detail-section dark-bg">
+  <div class="container">
+    <div class="services-header-center" style="margin-bottom:40px;">
+      <span class="sub-badge-green">HOW IT WORKS?</span>
+      <h2>Our Simple 4-Step Investment Process</h2>
+    </div>
+
+    <div class="detail-process-timeline">
+      <div class="d-proc-step">
+        <div class="d-proc-ico">👤</div>
+        <h4>1. Understand Your Goals</h4>
+        <p>We understand your financial goals, risk appetite and investment horizon.</p>
+      </div>
+
+      <div class="d-proc-step">
+        <div class="d-proc-ico">🔍</div>
+        <h4>2. Research & Recommend</h4>
+        <p>Our experts research the market and recommend the best stocks for you.</p>
+      </div>
+
+      <div class="d-proc-step">
+        <div class="d-proc-ico">💵</div>
+        <h4>3. Invest Confidently</h4>
+        <p>Invest in recommended stocks through a seamless and secure process.</p>
+      </div>
+
+      <div class="d-proc-step">
+        <div class="d-proc-ico">📈</div>
+        <h4>4. Track & Grow</h4>
+        <p>We continuously monitor your portfolio and help it grow over time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: TRUSTED BANNER -->
+<section class="detail-section dark-bg-alt">
+  <div class="container">
+    <div class="trust-banner-card">
+      <div class="trust-left-info">
+        <div class="trust-ico-bull">📈</div>
+        <div>
+          <h3>Trusted by Thousands of Investors</h3>
+          <div class="trust-stats-inline">
+            <div>
+              <b class="stat-green">₹250 Cr+</b>
+              <span>Assets Managed</span>
+            </div>
+            <div class="divider-line"></div>
+            <div>
+              <b class="stat-green">50,000+</b>
+              <span>Retention Rate</span>
+            </div>
+            <div class="divider-line"></div>
+            <div>
+              <b class="stat-green">98%</b>
+              <span>Experience</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="trust-right-btns">
+        <button class="btn btn-primary" onclick="openConsultModal('Stock Market Investment')">Book Free Consultation &rarr;</button>
+        <button class="btn btn-outline" onclick="openConsultModal()">Talk to an Expert</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container foot-grid">
+    <div class="foot-about">
+      <div class="foot-logo"><div class="logo-icon">📈</div>InvestPro</div>
+      <p style="margin-top:-8px; margin-bottom:14px; color:#6b7280; font-size:12px;">Grow Your Wealth</p>
+      <p>We are committed to helping you grow your wealth with trusted investment solutions and personalized financial advice.</p>
+      <div class="foot-social">
+        <a href="#">f</a><a href="#">𝕏</a><a href="#">in</a><a href="#">◎</a><a href="#">▶</a>
+      </div>
+    </div>
+    <div>
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="plans.html">Investment Plans</a></li>
+        <li><a href="market.html">Market</a></li>
+        <li><a href="index.html#blogs">Blog</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Our Services</h5>
+      <ul>
+        <li><a href="stock-market.html">Stock Market Investment</a></li>
+        <li><a href="services.html">Mutual Funds</a></li>
+        <li><a href="services.html">SIP Planning</a></li>
+        <li><a href="services.html">Retirement Planning</a></li>
+        <li><a href="services.html">Wealth Management</a></li>
+        <li><a href="services.html">Portfolio Analysis</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Resources</h5>
+      <ul>
+        <li><a href="index.html#calculator">Investment Calculator</a></li>
+        <li><a href="market.html">Market Updates</a></li>
+        <li><a href="#faq">FAQs</a></li>
+        <li><a href="#">Download App</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contact Us</h5>
+      <ul class="foot-contact">
+        <li>📞 +91 98765 43210</li>
+        <li>✉️ info@investpro.com</li>
+        <li>📍 123, Finance Street, Mumbai, Maharashtra - 400001</li>
+        <li>🛡️ SEBI Registered Investment Advisor</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container foot-bottom">
+    <span>© 2024 InvestPro. All Rights Reserved.</span>
+    <div class="badges"><span>✅ Secure Investments</span><span>🛡️ SEBI Registered</span></div>
+  </div>
+</footer>
+
+<!-- CONSULTATION MODAL DIALOG -->
+<div class="modal-overlay" id="consult-modal">
+  <div class="modal-content">
+    <button class="modal-close" id="close-consult-modal">&times;</button>
+    <div class="modal-header">
+      <span class="modal-badge">100% Free Advisory Call</span>
+      <h3>Book Free Consultation</h3>
+      <p>Speak directly with a SEBI registered wealth manager.</p>
+    </div>
+    <form id="consult-form" onsubmit="return false;">
+      <div class="form-group">
+        <label for="c-name">Full Name *</label>
+        <input type="text" id="c-name" placeholder="e.g. Rahul Sharma" required>
+      </div>
+      <div class="form-group">
+        <label for="c-phone">Mobile Number *</label>
+        <input type="tel" id="c-phone" placeholder="e.g. +91 98765 43210" required>
+      </div>
+      <div class="form-group">
+        <label for="c-email">Email Address *</label>
+        <input type="email" id="c-email" placeholder="e.g. rahul@example.com" required>
+      </div>
+      <div class="form-group">
+        <label for="c-topic">Select Topic</label>
+        <select id="c-topic">
+          <option value="stocks">Equity & Stock Market Baskets</option>
+          <option value="sip">SIP & Mutual Fund Advisory</option>
+          <option value="retirement">Retirement & Pension Corpus</option>
+          <option value="wealth">Comprehensive Wealth Strategy</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary w-full" style="margin-top:10px;">Confirm Free Session &rarr;</button>
+    </form>
+  </div>
+</div>
+
+<!-- TOAST CONTAINER -->
+<div id="toast-container"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

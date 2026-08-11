@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Investment Plans - InvestPro Wealth Solutions</title>
+<meta name="description" content="Explore InvestPro's curated investment plans: Starter Plan, Growth Plan, and Premium Plan tailored for every financial goal and risk appetite.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="nav-wrap">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+          <polyline points="17 6 23 6 23 12"></polyline>
+        </svg>
+      </div>
+      <div>
+        <span class="logo-title">InvestPro</span>
+        <span class="logo-sub">Grow Your Wealth</span>
+      </div>
+    </a>
+    <nav id="desktop-nav">
+      <ul>
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="plans.html" class="nav-link active">Investment Plans</a></li>
+        <li><a href="market.html" class="nav-link">Market</a></li>
+        <li><a href="index.html#blogs" class="nav-link">Blog</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a href="tel:+919876543210" class="phone">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+        <span>+91 98765 43210</span>
+      </a>
+      <button class="btn btn-primary" id="consult-btn">Book Free Consultation</button>
+      <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- MOBILE MENU OVERLAY / DRAWER -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">📈</div>
+        <div><span class="logo-title">InvestPro</span></div>
+      </a>
+      <button class="close-drawer" id="close-drawer-btn">&times;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-link">Home</a></li>
+      <li><a href="about.html" class="mobile-link">About Us</a></li>
+      <li><a href="services.html" class="mobile-link">Services</a></li>
+      <li><a href="plans.html" class="mobile-link active">Investment Plans</a></li>
+      <li><a href="index.html#market" class="mobile-link">Market</a></li>
+      <li><a href="index.html#blogs" class="mobile-link">Blog</a></li>
+      <li><a href="index.html#calculator" class="mobile-link">Investment Calculator</a></li>
+      <li><a href="index.html#contact" class="mobile-link">Contact</a></li>
+    </ul>
+    <div class="mobile-drawer-footer">
+      <a href="tel:+919876543210" class="phone-mobile">📞 +91 98765 43210</a>
+      <button class="btn btn-primary w-full" id="mobile-consult-btn">Book Free Consultation</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO HEADER BANNER -->
+<section class="plans-hero-banner">
+  <!-- Glowing trendline overlay with coin stack effect -->
+  <svg class="plans-graph-overlay" viewBox="0 0 1200 350" preserveAspectRatio="none">
+    <path d="M 0 320 Q 350 250, 700 160 T 1200 30" fill="none" stroke="#22c55e" stroke-width="3" opacity="0.45" />
+    <circle cx="700" cy="160" r="6" fill="#4ade80" />
+    <circle cx="980" cy="70" r="7" fill="#4ade80" />
+  </svg>
+
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> <span>/</span> <span class="current-crumb">Investment Plans</span>
+    </div>
+    <div class="plans-hero-content">
+      <h1>Investment Plans<br><span class="green-glow-text">Smart Plans</span> for Every Financial Goal</h1>
+      <p>At InvestPro, we offer a range of carefully curated investment plans designed to help you achieve your financial goals, no matter where you are in your investment journey.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CHOOSE THE PLAN THAT SUITS YOU BEST -->
+<section class="plans-cards-section">
+  <div class="container">
+    <div class="services-header-center" style="margin-bottom:36px;">
+      <span class="sub-badge-green">OUR INVESTMENT PLANS</span>
+      <h2 style="color:var(--text-dark);">Choose the Plan That Suits You Best</h2>
+      <p style="color:var(--text-muted);">Flexible plans tailored to your goals, risk appetite, and investment horizon.</p>
+    </div>
+
+    <div class="plans-cards-grid">
+      <!-- Starter Plan Card -->
+      <div class="plan-detail-card">
+        <div class="plan-card-head">
+          <div class="plan-ico-wrap green-ico">🌱</div>
+          <div>
+            <h3>Starter Plan</h3>
+            <span class="plan-subtitle green-sub">For Beginners</span>
+          </div>
+        </div>
+        <p class="plan-desc">Begin your investment journey with low risk and steady returns.</p>
+
+        <div class="plan-meta-box light-green-bg">
+          <div class="meta-row-top">
+            <span>Minimum Investment</span>
+            <b class="meta-val green-text">₹500</b>
+          </div>
+          <div class="meta-row-bottom">
+            <div>
+              <span>Risk Level</span>
+              <b class="meta-val-sm">Low</b>
+            </div>
+            <div>
+              <span>Expected Returns</span>
+              <b class="meta-val-sm green-text">8% - 12%</b>
+            </div>
+          </div>
+        </div>
+
+        <div class="plan-ideal-box">
+          <span class="ideal-title">Ideal For</span>
+          <ul class="ideal-list">
+            <li><span>•</span> New Investors</li>
+            <li><span>•</span> Short Term Goals</li>
+            <li><span>•</span> Low Risk Appetite</li>
+          </ul>
+        </div>
+
+        <button class="btn btn-primary w-full" onclick="openConsultModal('Starter Plan')">Choose Plan</button>
+      </div>
+
+      <!-- Growth Plan Card (Featured) -->
+      <div class="plan-detail-card featured-card">
+        <div class="most-popular-badge">Most Popular</div>
+        <div class="plan-card-head">
+          <div class="plan-ico-wrap blue-ico">📊</div>
+          <div>
+            <h3>Growth Plan</h3>
+            <span class="plan-subtitle blue-sub">For Long Term Growth</span>
+          </div>
+        </div>
+        <p class="plan-desc">Grow your wealth with a balanced approach and consistent returns.</p>
+
+        <div class="plan-meta-box light-blue-bg">
+          <div class="meta-row-top">
+            <span>Minimum Investment</span>
+            <b class="meta-val blue-text">₹5,000</b>
+          </div>
+          <div class="meta-row-bottom">
+            <div>
+              <span>Risk Level</span>
+              <b class="meta-val-sm">Medium</b>
+            </div>
+            <div>
+              <span>Expected Returns</span>
+              <b class="meta-val-sm blue-text">12% - 18%</b>
+            </div>
+          </div>
+        </div>
+
+        <div class="plan-ideal-box">
+          <span class="ideal-title">Ideal For</span>
+          <ul class="ideal-list">
+            <li><span>•</span> Long Term Wealth Creation</li>
+            <li><span>•</span> Moderate Risk Appetite</li>
+            <li><span>•</span> Balanced Portfolio</li>
+          </ul>
+        </div>
+
+        <button class="btn btn-blue w-full" onclick="openConsultModal('Growth Plan')">Choose Plan</button>
+      </div>
+
+      <!-- Premium Plan Card -->
+      <div class="plan-detail-card">
+        <div class="plan-card-head">
+          <div class="plan-ico-wrap green-ico">👑</div>
+          <div>
+            <h3>Premium Plan</h3>
+            <span class="plan-subtitle green-sub">For Wealth Maximizers</span>
+          </div>
+        </div>
+        <p class="plan-desc">Maximize your returns with high-growth opportunities and expert management.</p>
+
+        <div class="plan-meta-box light-green-bg">
+          <div class="meta-row-top">
+            <span>Minimum Investment</span>
+            <b class="meta-val green-text">₹50,000</b>
+          </div>
+          <div class="meta-row-bottom">
+            <div>
+              <span>Risk Level</span>
+              <b class="meta-val-sm">Medium - High</b>
+            </div>
+            <div>
+              <span>Expected Returns</span>
+              <b class="meta-val-sm green-text">18% - 25%</b>
+            </div>
+          </div>
+        </div>
+
+        <div class="plan-ideal-box">
+          <span class="ideal-title">Ideal For</span>
+          <ul class="ideal-list">
+            <li><span>•</span> Experienced Investors</li>
+            <li><span>•</span> High Risk Appetite</li>
+            <li><span>•</span> Long Term Wealth Maximization</li>
+          </ul>
+        </div>
+
+        <button class="btn btn-primary w-full" onclick="openConsultModal('Premium Plan')">Choose Plan</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE OUR PLANS & PLAN HELP SECTION -->
+<section class="plans-compare-section">
+  <div class="container compare-grid">
+    <!-- Left Column: Compare Table -->
+    <div class="compare-table-container">
+      <h3 class="compare-title">Compare Our Plans</h3>
+      <div class="compare-table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Features</th>
+              <th>Starter Plan</th>
+              <th>Growth Plan</th>
+              <th>Premium Plan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Minimum Investment</td>
+              <td>₹500</td>
+              <td>₹5,000</td>
+              <td>₹50,000</td>
+            </tr>
+            <tr>
+              <td>Risk Level</td>
+              <td>Low</td>
+              <td>Medium</td>
+              <td>Medium - High</td>
+            </tr>
+            <tr>
+              <td>Expected Returns (p.a.)</td>
+              <td class="text-green font-bold">8% - 12%</td>
+              <td class="text-green font-bold">12% - 18%</td>
+              <td class="text-green font-bold">18% - 25%</td>
+            </tr>
+            <tr>
+              <td>Investment Horizon</td>
+              <td>1 - 3 Years</td>
+              <td>3 - 7 Years</td>
+              <td>7+ Years</td>
+            </tr>
+            <tr>
+              <td>SIP Available</td>
+              <td><span class="check-mark">✔</span></td>
+              <td><span class="check-mark">✔</span></td>
+              <td><span class="check-mark">✔</span></td>
+            </tr>
+            <tr>
+              <td>Tax Benefits</td>
+              <td><span class="check-mark">✔</span></td>
+              <td><span class="check-mark">✔</span></td>
+              <td><span class="check-mark">✔</span></td>
+            </tr>
+            <tr>
+              <td>Dedicated Advisor</td>
+              <td>–</td>
+              <td><span class="check-mark">✔</span></td>
+              <td><span class="check-mark">✔</span></td>
+            </tr>
+            <tr>
+              <td>Portfolio Review</td>
+              <td>Half Yearly</td>
+              <td>Quarterly</td>
+              <td>Monthly</td>
+            </tr>
+            <tr>
+              <td>Priority Support</td>
+              <td>–</td>
+              <td><span class="check-mark">✔</span></td>
+              <td><span class="check-mark">✔</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Right Column: Not Sure Which Plan Box -->
+    <div class="plan-help-box">
+      <h3>Not Sure Which Plan is Right for You?</h3>
+      <p>Let our experts help you choose the best plan based on your goals.</p>
+
+      <ul class="help-features-list">
+        <li>
+          <div class="help-ico">👤</div>
+          <span>Personalized Recommendation</span>
+        </li>
+        <li>
+          <div class="help-ico">🎯</div>
+          <span>Goal Based Planning</span>
+        </li>
+        <li>
+          <div class="help-ico">🎧</div>
+          <span>Expert Guidance</span>
+        </li>
+      </ul>
+
+      <button class="btn btn-primary w-full" onclick="openConsultModal()">Book Free Consultation &rarr;</button>
+    </div>
+  </div>
+</section>
+
+<!-- POPULAR GOALS WE HELP YOU ACHIEVE -->
+<section class="goals-section">
+  <div class="container">
+    <div class="services-header-center" style="margin-bottom:32px;">
+      <h2 style="color:var(--text-dark); font-size:24px;">Popular Goals We Help You Achieve</h2>
+    </div>
+
+    <div class="goals-grid">
+      <div class="goal-card">
+        <div class="goal-ico">🏡</div>
+        <span>Buy Your Dream Home</span>
+      </div>
+      <div class="goal-card">
+        <div class="goal-ico">🎓</div>
+        <span>Child Education</span>
+      </div>
+      <div class="goal-card">
+        <div class="goal-ico">🛋️</div>
+        <span>Retirement Planning</span>
+      </div>
+      <div class="goal-card">
+        <div class="goal-ico">📈</div>
+        <span>Wealth Creation</span>
+      </div>
+      <div class="goal-card">
+        <div class="goal-ico">🙌</div>
+        <span>Financial Freedom</span>
+      </div>
+      <div class="goal-card">
+        <div class="goal-ico">🛡️</div>
+        <span>Tax Saving</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALL TO ACTION BANNER -->
+<section class="cta-banner-section">
+  <div class="container">
+    <div class="cta-box">
+      <div class="cta-content" style="display:flex; align-items:center; gap:16px;">
+        <div style="font-size:36px; background:rgba(34,197,94,0.2); width:56px; height:56px; border-radius:12px; display:flex; align-items:center; justify-content:center;">🧮</div>
+        <div>
+          <h2>Start Investing Today</h2>
+          <p>Take the first step towards a secure financial future. Choose a plan and let us help you grow your wealth.</p>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-lg" onclick="openConsultModal()">Start Investing &rarr;</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container foot-grid">
+    <div class="foot-about">
+      <div class="foot-logo"><div class="logo-icon">📈</div>InvestPro</div>
+      <p style="margin-top:-8px; margin-bottom:14px; color:#6b7280; font-size:12px;">Grow Your Wealth</p>
+      <p>We are committed to helping you grow your wealth with trusted investment solutions and personalized financial advice.</p>
+      <div class="foot-social">
+        <a href="#">f</a><a href="#">𝕏</a><a href="#">in</a><a href="#">◎</a><a href="#">▶</a>
+      </div>
+    </div>
+    <div>
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="plans.html">Investment Plans</a></li>
+        <li><a href="index.html#market">Market</a></li>
+        <li><a href="index.html#blogs">Blog</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Our Services</h5>
+      <ul>
+        <li><a href="services.html">Stock Market Investment</a></li>
+        <li><a href="services.html">Mutual Funds</a></li>
+        <li><a href="services.html">SIP Planning</a></li>
+        <li><a href="services.html">Retirement Planning</a></li>
+        <li><a href="services.html">Wealth Management</a></li>
+        <li><a href="services.html">Portfolio Analysis</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Resources</h5>
+      <ul>
+        <li><a href="index.html#calculator">Investment Calculator</a></li>
+        <li><a href="index.html#market">Market Updates</a></li>
+        <li><a href="#faq">FAQs</a></li>
+        <li><a href="#">Download App</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contact Us</h5>
+      <ul class="foot-contact">
+        <li>📞 +91 98765 43210</li>
+        <li>✉️ info@investpro.com</li>
+        <li>📍 123, Finance Street, Mumbai, Maharashtra - 400001</li>
+        <li>🛡️ SEBI Registered Investment Advisor</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container foot-bottom">
+    <span>© 2024 InvestPro. All Rights Reserved.</span>
+    <div class="badges"><span>✅ Secure Investments</span><span>🛡️ SEBI Registered</span></div>
+  </div>
+</footer>
+
+<!-- CONSULTATION MODAL DIALOG -->
+<div class="modal-overlay" id="consult-modal">
+  <div class="modal-content">
+    <button class="modal-close" id="close-consult-modal">&times;</button>
+    <div class="modal-header">
+      <span class="modal-badge">100% Free Advisory Call</span>
+      <h3>Book Free Consultation</h3>
+      <p>Speak directly with a SEBI registered wealth manager.</p>
+    </div>
+    <form id="consult-form" onsubmit="return false;">
+      <div class="form-group">
+        <label for="c-name">Full Name *</label>
+        <input type="text" id="c-name" placeholder="e.g. Rahul Sharma" required>
+      </div>
+      <div class="form-group">
+        <label for="c-phone">Mobile Number *</label>
+        <input type="tel" id="c-phone" placeholder="e.g. +91 98765 43210" required>
+      </div>
+      <div class="form-group">
+        <label for="c-email">Email Address *</label>
+        <input type="email" id="c-email" placeholder="e.g. rahul@example.com" required>
+      </div>
+      <div class="form-group">
+        <label for="c-topic">Select Topic</label>
+        <select id="c-topic">
+          <option value="sip">SIP & Mutual Fund Advisory</option>
+          <option value="stocks">Equity & Stock Market Baskets</option>
+          <option value="retirement">Retirement & Pension Corpus</option>
+          <option value="wealth">Comprehensive Wealth Strategy</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary w-full" style="margin-top:10px;">Confirm Free Session &rarr;</button>
+    </form>
+  </div>
+</div>
+
+<!-- TOAST CONTAINER -->
+<div id="toast-container"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

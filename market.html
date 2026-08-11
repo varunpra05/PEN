@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Market Overview - InvestPro Live Insights</title>
+<meta name="description" content="Stay informed with live market data, indices, trends, sector performance, global markets, and market news to make confident investment decisions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="nav-wrap">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+          <polyline points="17 6 23 6 23 12"></polyline>
+        </svg>
+      </div>
+      <div>
+        <span class="logo-title">InvestPro</span>
+        <span class="logo-sub">Grow Your Wealth</span>
+      </div>
+    </a>
+    <nav id="desktop-nav">
+      <ul>
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="plans.html" class="nav-link">Investment Plans</a></li>
+        <li><a href="market.html" class="nav-link active">Market</a></li>
+        <li><a href="index.html#blogs" class="nav-link">Blog</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a href="tel:+919876543210" class="phone">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+        <span>+91 98765 43210</span>
+      </a>
+      <button class="btn btn-primary" id="consult-btn">Book Free Consultation</button>
+      <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- MOBILE MENU OVERLAY / DRAWER -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">📈</div>
+        <div><span class="logo-title">InvestPro</span></div>
+      </a>
+      <button class="close-drawer" id="close-drawer-btn">&times;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-link">Home</a></li>
+      <li><a href="about.html" class="mobile-link">About Us</a></li>
+      <li><a href="services.html" class="mobile-link">Services</a></li>
+      <li><a href="plans.html" class="mobile-link">Investment Plans</a></li>
+      <li><a href="market.html" class="mobile-link active">Market</a></li>
+      <li><a href="index.html#blogs" class="mobile-link">Blog</a></li>
+      <li><a href="index.html#calculator" class="mobile-link">Investment Calculator</a></li>
+      <li><a href="index.html#contact" class="mobile-link">Contact</a></li>
+    </ul>
+    <div class="mobile-drawer-footer">
+      <a href="tel:+919876543210" class="phone-mobile">📞 +91 98765 43210</a>
+      <button class="btn btn-primary w-full" id="mobile-consult-btn">Book Free Consultation</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO HEADER BANNER -->
+<section class="mkt-hero-banner">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> <span>/</span> <span class="current-crumb">Market</span>
+    </div>
+    <div class="mkt-hero-content">
+      <h1>Market Overview<br><span class="green-glow-text">Real-time Insights.</span> Smarter Decisions.</h1>
+      <p>Stay informed with live market data, trends, and analysis to make confident investment decisions.</p>
+
+      <!-- LIVE TOP TICKER BAR -->
+      <div class="mkt-ticker-bar">
+        <div class="mkt-status-box">
+          <b>Market is Open</b>
+          <span>Updates in real-time <span class="pulse-dot-sm"></span></span>
+        </div>
+        <div class="mkt-ticker-items">
+          <div class="ticker-pill">
+            <span class="lbl">NIFTY 50</span>
+            <b class="val">24,864.15</b>
+            <span class="chg up">▲ 1.25% (308.40)</span>
+          </div>
+          <div class="ticker-pill">
+            <span class="lbl">SENSEX</span>
+            <b class="val">81,330.56</b>
+            <span class="chg up">▲ 1.18% (948.67)</span>
+          </div>
+          <div class="ticker-pill">
+            <span class="lbl">BANK NIFTY</span>
+            <b class="val">51,263.80</b>
+            <span class="chg up">▲ 0.92% (470.15)</span>
+          </div>
+          <div class="ticker-pill">
+            <span class="lbl">NIFTY IT</span>
+            <b class="val">41,987.30</b>
+            <span class="chg up">▲ 0.74% (308.25)</span>
+          </div>
+          <div class="ticker-pill">
+            <span class="lbl">INDIA VIX</span>
+            <b class="val">12.34</b>
+            <span class="chg down">▼ -2.41% (0.31)</span>
+          </div>
+        </div>
+        <a href="#all-indices" class="view-all-link">View All Indices &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN MARKET DASHBOARD GRID -->
+<section class="mkt-main-section" id="all-indices">
+  <div class="container mkt-dashboard-grid">
+    
+    <!-- LEFT COLUMN (2/3 WIDTH): INDICES CAROUSEL & CHART -->
+    <div class="mkt-left-col">
+      
+      <!-- LIVE MARKET INDICES CAROUSEL -->
+      <div class="mkt-block-head">
+        <h3>Live Market Indices</h3>
+        <a href="#" class="view-link-sm">View All Indices &rarr;</a>
+      </div>
+
+      <div class="indices-cards-row">
+        <!-- Card 1 -->
+        <div class="index-card">
+          <div class="idx-head">
+            <h5>NIFTY 50</h5>
+            <span class="idx-val">24,864.15</span>
+            <span class="idx-chg up">▲ 1.25% (308.40)</span>
+          </div>
+          <div class="spark-wrapper">
+            <svg class="spark-line" viewBox="0 0 200 45">
+              <path d="M 0 35 Q 50 30, 100 18 T 200 5" fill="none" stroke="#22c55e" stroke-width="2.5"/>
+            </svg>
+          </div>
+          <div class="idx-high-low">
+            <div><span>Day High</span><b>24,914.50</b></div>
+            <div><span>Day Low</span><b>24,510.20</b></div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="index-card">
+          <div class="idx-head">
+            <h5>SENSEX</h5>
+            <span class="idx-val">81,330.56</span>
+            <span class="idx-chg up">▲ 1.18% (948.67)</span>
+          </div>
+          <div class="spark-wrapper">
+            <svg class="spark-line" viewBox="0 0 200 45">
+              <path d="M 0 38 Q 60 25, 120 15 T 200 8" fill="none" stroke="#22c55e" stroke-width="2.5"/>
+            </svg>
+          </div>
+          <div class="idx-high-low">
+            <div><span>Day High</span><b>81,521.15</b></div>
+            <div><span>Day Low</span><b>80,112.45</b></div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="index-card">
+          <div class="idx-head">
+            <h5>BANK NIFTY</h5>
+            <span class="idx-val">51,263.80</span>
+            <span class="idx-chg up">▲ 0.92% (470.15)</span>
+          </div>
+          <div class="spark-wrapper">
+            <svg class="spark-line" viewBox="0 0 200 45">
+              <path d="M 0 32 Q 50 28, 100 20 T 200 10" fill="none" stroke="#22c55e" stroke-width="2.5"/>
+            </svg>
+          </div>
+          <div class="idx-high-low">
+            <div><span>Day High</span><b>51,542.30</b></div>
+            <div><span>Day Low</span><b>50,782.10</b></div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="index-card">
+          <div class="idx-head">
+            <h5>NIFTY IT</h5>
+            <span class="idx-val">41,987.30</span>
+            <span class="idx-chg up">▲ 0.74% (308.25)</span>
+          </div>
+          <div class="spark-wrapper">
+            <svg class="spark-line" viewBox="0 0 200 45">
+              <path d="M 0 25 Q 60 30, 120 18 T 200 12" fill="none" stroke="#22c55e" stroke-width="2.5"/>
+            </svg>
+          </div>
+          <div class="idx-high-low">
+            <div><span>Day High</span><b>42,210.75</b></div>
+            <div><span>Day Low</span><b>41,250.60</b></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INTERACTIVE MARKET CHART BOX -->
+      <div class="chart-box-card">
+        <div class="chart-head-bar">
+          <div class="chart-title-select">
+            <h3>Market Chart</h3>
+            <select id="chart-index-select" class="chart-dropdown">
+              <option value="nifty">NIFTY 50</option>
+              <option value="sensex">SENSEX</option>
+              <option value="banknifty">BANK NIFTY</option>
+            </select>
+          </div>
+          <div class="timeframe-pills">
+            <button class="tf-btn active">1D</button>
+            <button class="tf-btn">5D</button>
+            <button class="tf-btn">1M</button>
+            <button class="tf-btn">6M</button>
+            <button class="tf-btn">YTD</button>
+            <button class="tf-btn">1Y</button>
+            <button class="tf-btn">5Y</button>
+            <button class="tf-btn">Max</button>
+          </div>
+        </div>
+
+        <!-- AREA GRAPH SVG -->
+        <div class="chart-canvas-wrap">
+          <svg class="main-chart-svg" viewBox="0 0 600 220" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#22c55e" stop-opacity="0.3"/>
+                <stop offset="100%" stop-color="#22c55e" stop-opacity="0.0"/>
+              </linearGradient>
+            </defs>
+            <!-- Gridlines -->
+            <line x1="0" y1="40" x2="600" y2="40" stroke="#f1f5f9" stroke-dasharray="4"/>
+            <line x1="0" y1="90" x2="600" y2="90" stroke="#f1f5f9" stroke-dasharray="4"/>
+            <line x1="0" y1="140" x2="600" y2="140" stroke="#f1f5f9" stroke-dasharray="4"/>
+            <line x1="0" y1="190" x2="600" y2="190" stroke="#f1f5f9" stroke-dasharray="4"/>
+            
+            <!-- Area & Line -->
+            <polygon points="0,170 50,140 100,160 150,130 200,145 250,110 300,120 350,90 400,95 450,65 500,80 550,45 600,50 600,220 0,220" fill="url(#chartGrad)" />
+            <polyline points="0,170 50,140 100,160 150,130 200,145 250,110 300,120 350,90 400,95 450,65 500,80 550,45 600,50" fill="none" stroke="#22c55e" stroke-width="2.5" />
+            <circle cx="600" cy="50" r="5" fill="#22c55e" />
+          </svg>
+        </div>
+
+        <div class="chart-time-axis">
+          <span>09:15</span>
+          <span>10:00</span>
+          <span>11:00</span>
+          <span>12:00</span>
+          <span>13:00</span>
+          <span>14:00</span>
+          <span>15:00</span>
+        </div>
+      </div>
+
+      <!-- BOTTOM SECTOR PERFORMANCE & GLOBAL MARKETS -->
+      <div class="sector-global-grid">
+        <!-- Sector Performance -->
+        <div class="sg-card">
+          <div class="sg-head">
+            <h4>Sector Performance</h4>
+          </div>
+          <ul class="sg-list">
+            <li>
+              <span class="name">🚗 Nifty Auto</span>
+              <b class="val">29,458.75</b>
+              <span class="chg up">▲ 2.35%</span>
+              <div class="bar-bg"><div class="bar-fill green" style="width:75%;"></div></div>
+            </li>
+            <li>
+              <span class="name">💻 Nifty IT</span>
+              <b class="val">41,987.30</b>
+              <span class="chg up">▲ 0.74%</span>
+              <div class="bar-bg"><div class="bar-fill green" style="width:40%;"></div></div>
+            </li>
+            <li>
+              <span class="name">💊 Nifty Pharma</span>
+              <b class="val">15,230.45</b>
+              <span class="chg up">▲ 0.52%</span>
+              <div class="bar-bg"><div class="bar-fill green" style="width:30%;"></div></div>
+            </li>
+            <li>
+              <span class="name">🛒 Nifty FMCG</span>
+              <b class="val">54,123.80</b>
+              <span class="chg down">▼ -0.15%</span>
+              <div class="bar-bg"><div class="bar-fill red" style="width:20%;"></div></div>
+            </li>
+            <li>
+              <span class="name">🏢 Nifty Realty</span>
+              <b class="val">892.30</b>
+              <span class="chg down">▼ -0.68%</span>
+              <div class="bar-bg"><div class="bar-fill red" style="width:45%;"></div></div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Global Markets -->
+        <div class="sg-card">
+          <div class="sg-head">
+            <h4>Global Markets</h4>
+          </div>
+          <ul class="sg-list">
+            <li>
+              <span class="name">🇺🇸 Dow Jones</span>
+              <b class="val">38,886.67</b>
+              <span class="chg up">▲ 0.88%</span>
+            </li>
+            <li>
+              <span class="name">🇺🇸 Nasdaq</span>
+              <b class="val">16,735.02</b>
+              <span class="chg up">▲ 0.98%</span>
+            </li>
+            <li>
+              <span class="name">🇬🇧 FTSE 100</span>
+              <b class="val">8,275.60</b>
+              <span class="chg up">▲ 0.25%</span>
+            </li>
+            <li>
+              <span class="name">🇯🇵 Nikkei 225</span>
+              <b class="val">39,101.82</b>
+              <span class="chg up">▲ 1.15%</span>
+            </li>
+            <li>
+              <span class="name">🇭🇰 Hang Seng</span>
+              <b class="val">18,672.45</b>
+              <span class="chg up">▲ 0.85%</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN (1/3 WIDTH): MARKET MOVERS, NEWS, COMMODITIES -->
+    <div class="mkt-right-col">
+      
+      <!-- MARKET MOVERS -->
+      <div class="side-card">
+        <div class="side-card-head">
+          <h4>Market Movers</h4>
+        </div>
+        <div class="mover-tabs">
+          <button class="mover-tab active">Top Gainers</button>
+          <button class="mover-tab">Top Losers</button>
+        </div>
+        <table class="mover-table">
+          <thead>
+            <tr>
+              <th>Company</th>
+              <th style="text-align:right;">Price (₹)</th>
+              <th style="text-align:right;">Change (%)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>Tata Motors</b></td>
+              <td style="text-align:right;">965.30</td>
+              <td style="text-align:right;" class="chg up">▲ 4.25%</td>
+            </tr>
+            <tr>
+              <td><b>Adani Ports</b></td>
+              <td style="text-align:right;">1,502.20</td>
+              <td style="text-align:right;" class="chg up">▲ 3.85%</td>
+            </tr>
+            <tr>
+              <td><b>HDFC Bank</b></td>
+              <td style="text-align:right;">1,678.90</td>
+              <td style="text-align:right;" class="chg up">▲ 3.21%</td>
+            </tr>
+            <tr>
+              <td><b>ICICI Bank</b></td>
+              <td style="text-align:right;">1,234.50</td>
+              <td style="text-align:right;" class="chg up">▲ 2.98%</td>
+            </tr>
+            <tr>
+              <td><b>Reliance Ind.</b></td>
+              <td style="text-align:right;">2,889.15</td>
+              <td style="text-align:right;" class="chg up">▲ 2.77%</td>
+            </tr>
+          </tbody>
+        </table>
+        <a href="#" class="view-link-block">View All Stocks &rarr;</a>
+      </div>
+
+      <!-- MARKET NEWS -->
+      <div class="side-card">
+        <div class="side-card-head">
+          <h4>Market News</h4>
+          <a href="#" class="view-link-sm">View All News &rarr;</a>
+        </div>
+        <div class="news-list">
+          <div class="news-item">
+            <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=150&auto=format&fit=crop" alt="News">
+            <div>
+              <span class="news-tag green">MARKET NEWS</span>
+              <h5>Sensex, Nifty Hit Record High on Strong Global Cues</h5>
+              <span class="news-time">2 hours ago</span>
+            </div>
+          </div>
+          <div class="news-item">
+            <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=150&auto=format&fit=crop" alt="News">
+            <div>
+              <span class="news-tag blue">ECONOMY</span>
+              <h5>RBI Keeps Repo Rate Unchanged, Signals Growth Focus</h5>
+              <span class="news-time">4 hours ago</span>
+            </div>
+          </div>
+          <div class="news-item">
+            <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=150&auto=format&fit=crop" alt="News">
+            <div>
+              <span class="news-tag purple">STOCKS</span>
+              <h5>IT Stocks Rally as US Markets Close Higher</h5>
+              <span class="news-time">6 hours ago</span>
+            </div>
+          </div>
+          <div class="news-item">
+            <img src="https://images.unsplash.com/photo-1611095973763-414019e72400?q=80&w=150&auto=format&fit=crop" alt="News">
+            <div>
+              <span class="news-tag orange">IPO</span>
+              <h5>Upcoming IPO: All You Need to Know This Week</h5>
+              <span class="news-time">1 day ago</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMMODITIES -->
+      <div class="side-card">
+        <div class="side-card-head">
+          <h4>Commodities</h4>
+        </div>
+        <ul class="commodities-list">
+          <li>
+            <span>🪙 Gold (24K)</span>
+            <b>₹72,910</b>
+            <span class="chg up">▲ 0.65%</span>
+          </li>
+          <li>
+            <span>🥈 Silver</span>
+            <b>₹91,200</b>
+            <span class="chg up">▲ 0.42%</span>
+          </li>
+          <li>
+            <span>🛢️ Crude Oil</span>
+            <b>$78.25</b>
+            <span class="chg down">▼ -0.32%</span>
+          </li>
+          <li>
+            <span>💧 Natural Gas</span>
+            <b>$2.45</b>
+            <span class="chg up">▲ 1.05%</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- CALL TO ACTION BANNER -->
+<section class="cta-banner-section">
+  <div class="container">
+    <div class="cta-box">
+      <div class="cta-content" style="display:flex; align-items:center; gap:16px;">
+        <div style="font-size:36px; background:rgba(34,197,94,0.2); width:56px; height:56px; border-radius:12px; display:flex; align-items:center; justify-content:center;">🐂</div>
+        <div>
+          <h2>Stay Ahead of the Market</h2>
+          <p>Get real-time alerts, expert insights, and personalized recommendations.</p>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-lg" onclick="openConsultModal()">Start Investing Today &rarr;</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container foot-grid">
+    <div class="foot-about">
+      <div class="foot-logo"><div class="logo-icon">📈</div>InvestPro</div>
+      <p style="margin-top:-8px; margin-bottom:14px; color:#6b7280; font-size:12px;">Grow Your Wealth</p>
+      <p>We are committed to helping you grow your wealth with trusted investment solutions and personalized financial advice.</p>
+      <div class="foot-social">
+        <a href="#">f</a><a href="#">𝕏</a><a href="#">in</a><a href="#">◎</a><a href="#">▶</a>
+      </div>
+    </div>
+    <div>
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="plans.html">Investment Plans</a></li>
+        <li><a href="market.html">Market</a></li>
+        <li><a href="index.html#blogs">Blog</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Our Services</h5>
+      <ul>
+        <li><a href="services.html">Stock Market Investment</a></li>
+        <li><a href="services.html">Mutual Funds</a></li>
+        <li><a href="services.html">SIP Planning</a></li>
+        <li><a href="services.html">Retirement Planning</a></li>
+        <li><a href="services.html">Wealth Management</a></li>
+        <li><a href="services.html">Portfolio Analysis</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Resources</h5>
+      <ul>
+        <li><a href="index.html#calculator">Investment Calculator</a></li>
+        <li><a href="market.html">Market Updates</a></li>
+        <li><a href="#faq">FAQs</a></li>
+        <li><a href="#">Download App</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contact Us</h5>
+      <ul class="foot-contact">
+        <li>📞 +91 98765 43210</li>
+        <li>✉️ info@investpro.com</li>
+        <li>📍 123, Finance Street, Mumbai, Maharashtra - 400001</li>
+        <li>🛡️ SEBI Registered Investment Advisor</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container foot-bottom">
+    <span>© 2024 InvestPro. All Rights Reserved.</span>
+    <div class="badges"><span>✅ Secure Investments</span><span>🛡️ SEBI Registered</span></div>
+  </div>
+</footer>
+
+<!-- CONSULTATION MODAL DIALOG -->
+<div class="modal-overlay" id="consult-modal">
+  <div class="modal-content">
+    <button class="modal-close" id="close-consult-modal">&times;</button>
+    <div class="modal-header">
+      <span class="modal-badge">100% Free Advisory Call</span>
+      <h3>Book Free Consultation</h3>
+      <p>Speak directly with a SEBI registered wealth manager.</p>
+    </div>
+    <form id="consult-form" onsubmit="return false;">
+      <div class="form-group">
+        <label for="c-name">Full Name *</label>
+        <input type="text" id="c-name" placeholder="e.g. Rahul Sharma" required>
+      </div>
+      <div class="form-group">
+        <label for="c-phone">Mobile Number *</label>
+        <input type="tel" id="c-phone" placeholder="e.g. +91 98765 43210" required>
+      </div>
+      <div class="form-group">
+        <label for="c-email">Email Address *</label>
+        <input type="email" id="c-email" placeholder="e.g. rahul@example.com" required>
+      </div>
+      <div class="form-group">
+        <label for="c-topic">Select Topic</label>
+        <select id="c-topic">
+          <option value="sip">SIP & Mutual Fund Advisory</option>
+          <option value="stocks">Equity & Stock Market Baskets</option>
+          <option value="retirement">Retirement & Pension Corpus</option>
+          <option value="wealth">Comprehensive Wealth Strategy</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary w-full" style="margin-top:10px;">Confirm Free Session &rarr;</button>
+    </form>
+  </div>
+</div>
+
+<!-- TOAST CONTAINER -->
+<div id="toast-container"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
