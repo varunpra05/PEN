@@ -531,31 +531,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Mobile Drawer Toggle & Overlay
+  // Mobile Menu Overlay Toggle
   const hamburgerBtn = document.getElementById('hamburger-btn');
   const closeDrawerBtn = document.getElementById('close-drawer-btn');
   const mobileDrawer = document.getElementById('mobile-drawer');
 
-  const drawerOverlay = document.createElement('div');
-  drawerOverlay.className = 'mobile-drawer-overlay';
-  document.body.appendChild(drawerOverlay);
-
   function openMobileDrawer() {
     if (mobileDrawer) mobileDrawer.classList.add('open');
-    drawerOverlay.classList.add('open');
   }
   function closeMobileDrawer() {
     if (mobileDrawer) mobileDrawer.classList.remove('open');
-    drawerOverlay.classList.remove('open');
   }
 
   if (hamburgerBtn) hamburgerBtn.addEventListener('click', openMobileDrawer);
   if (closeDrawerBtn) closeDrawerBtn.addEventListener('click', closeMobileDrawer);
-  drawerOverlay.addEventListener('click', closeMobileDrawer);
 
-  document.querySelectorAll('.mobile-link').forEach(link => {
+  document.querySelectorAll('.m-link, .m-submenu a').forEach(link => {
     link.addEventListener('click', closeMobileDrawer);
   });
+
+  window.toggleSubmenu = function(arrowEl) {
+    const submenu = arrowEl.parentElement.nextElementSibling;
+    if (submenu) {
+      submenu.classList.toggle('open');
+      arrowEl.style.transform = submenu.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0deg)';
+    }
+  };
 
   // ---------- SERVICES PAGE INTERACTIVITY ----------
   const filterTabs = document.querySelectorAll('.filter-tab');

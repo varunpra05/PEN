@@ -13,7 +13,7 @@
 <!-- HEADER -->
 <header id="header">
   <div class="nav-wrap">
-    <a href="#" class="logo">
+    <a href="index.html" class="logo">
       <div class="logo-icon">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
@@ -27,7 +27,7 @@
     </a>
     <nav id="desktop-nav">
       <ul>
-        <li><a href="#" class="nav-link active">Home</a></li>
+        <li><a href="index.html" class="nav-link active">Home</a></li>
         <li><a href="about.html" class="nav-link">About Us</a></li>
         <li><a href="services.html" class="nav-link">Services</a></li>
         <li><a href="plans.html" class="nav-link">Investment Plans</a></li>
@@ -37,46 +37,84 @@
       </ul>
     </nav>
     <div class="nav-right">
-      <a href="tel:+919876543210" class="phone">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <a href="tel:+919876543210" class="phone-icon-btn" aria-label="Call Us">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
         </svg>
-        <span>+91 98765 43210</span>
+        <span class="phone-text">+91 98765 43210</span>
       </a>
-      <button class="btn btn-primary" id="consult-btn">Book Free Consultation</button>
-      <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu">
-        <div class="hamburger-bars">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <span class="hamburger-text">Menu</span>
+      <button class="btn btn-primary consult-desktop-btn" id="consult-btn">Book Free Consultation</button>
+      <button class="hamburger-box" id="hamburger-btn" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
     </div>
   </div>
 
-  <!-- MOBILE MENU OVERLAY / DRAWER -->
-  <div class="mobile-drawer" id="mobile-drawer">
-    <div class="mobile-drawer-header">
-      <a href="#" class="logo">
-        <div class="logo-icon">📈</div>
-        <div><span class="logo-title">InvestPro</span></div>
+  <!-- MOBILE MENU OVERLAY (MATCHES DESIGN REFERENCE EXACTLY) -->
+  <div class="mobile-menu-overlay" id="mobile-drawer">
+    <div class="mobile-menu-header">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+            <polyline points="17 6 23 6 23 12"></polyline>
+          </svg>
+        </div>
+        <div>
+          <span class="logo-title">InvestPro</span>
+          <span class="logo-sub">Grow Your Wealth</span>
+        </div>
       </a>
-      <button class="close-drawer" id="close-drawer-btn">&times;</button>
+      <div class="mobile-header-actions">
+        <a href="tel:+919876543210" class="phone-icon-btn-sm" aria-label="Call Us">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+        </a>
+        <button class="close-menu-btn" id="close-drawer-btn" aria-label="Close menu">&times;</button>
+      </div>
     </div>
-    <ul class="mobile-nav-links">
-      <li><a href="#" class="mobile-link">Home</a></li>
-      <li><a href="about.html" class="mobile-link">About Us</a></li>
-      <li><a href="services.html" class="mobile-link">Services</a></li>
-      <li><a href="plans.html" class="mobile-link">Investment Plans</a></li>
-      <li><a href="market.html" class="mobile-link">Market</a></li>
-      <li><a href="#blogs" class="mobile-link">Blog</a></li>
-      <li><a href="#calculator" class="mobile-link">Investment Calculator</a></li>
-      <li><a href="#contact" class="mobile-link">Contact</a></li>
-    </ul>
-    <div class="mobile-drawer-footer">
-      <a href="tel:+919876543210" class="phone-mobile">📞 +91 98765 43210</a>
-      <button class="btn btn-primary w-full" id="mobile-consult-btn">Book Free Consultation</button>
+    
+    <div class="mobile-menu-body">
+      <ul class="mobile-nav-list">
+        <li><a href="index.html" class="m-link active">Home</a></li>
+        <li><a href="about.html" class="m-link">About Us</a></li>
+        <li class="has-submenu">
+          <div class="m-link-row">
+            <a href="services.html" class="m-link">Services</a>
+            <span class="sub-arrow" onclick="toggleSubmenu(this)">▾</span>
+          </div>
+          <ul class="m-submenu">
+            <li><a href="stock-market.html">Stock Market Investment</a></li>
+            <li><a href="services.html">Mutual Funds</a></li>
+            <li><a href="services.html">SIP Planning</a></li>
+            <li><a href="services.html">Retirement Planning</a></li>
+            <li><a href="services.html">Wealth Management</a></li>
+            <li><a href="services.html">Portfolio Analysis</a></li>
+          </ul>
+        </li>
+        <li><a href="plans.html" class="m-link">Investment Plans</a></li>
+        <li><a href="market.html" class="m-link">Market</a></li>
+        <li class="has-submenu">
+          <div class="m-link-row">
+            <a href="#calculator" class="m-link">Resources</a>
+            <span class="sub-arrow" onclick="toggleSubmenu(this)">▾</span>
+          </div>
+          <ul class="m-submenu">
+            <li><a href="#calculator">Investment Calculator</a></li>
+            <li><a href="market.html">Market Updates</a></li>
+            <li><a href="services.html#faq">FAQs & Guides</a></li>
+          </ul>
+        </li>
+        <li><a href="#blogs" class="m-link">Blog</a></li>
+        <li><a href="#contact" class="m-link">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="mobile-menu-footer">
+      <button class="btn btn-primary btn-lg w-full" id="mobile-consult-btn">Book Free Consultation</button>
     </div>
   </div>
 </header>
