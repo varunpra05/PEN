@@ -1541,18 +1541,127 @@ ul {
 }
 
 /* --------------------------------------------------------------------------
-   Feature Banners Section (Bridal, New Arrivals, Festive 3-Card Grid)
+   Trust Features & Guarantees Strip (5 Columns Matching Reference Design)
+   -------------------------------------------------------------------------- */
+.trust-features-strip {
+  padding: 1.8rem 0;
+  background-color: #ffffff;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.trust-features-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.trust-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.5rem 0.6rem;
+  transition: transform 0.3s ease;
+}
+
+.trust-feature-item:hover {
+  transform: translateY(-2px);
+}
+
+.trust-icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #fbf7f0;
+  border: 1px solid #ebdcc5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.trust-feature-item:hover .trust-icon-box {
+  background: #f7efe1;
+  border-color: #d4b16a;
+}
+
+.trust-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.trust-title {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.25;
+}
+
+.trust-subtitle {
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  color: var(--color-text-muted);
+  line-height: 1.3;
+}
+
+@media (max-width: 1024px) {
+  .trust-features-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .trust-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem 0.5rem;
+  }
+  .trust-feature-item {
+    gap: 0.6rem;
+  }
+  .trust-icon-box {
+    width: 36px;
+    height: 36px;
+  }
+  .trust-title {
+    font-size: 0.78rem;
+  }
+  .trust-subtitle {
+    font-size: 0.68rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .trust-features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Feature Banners Section (Bridal, New Arrivals, Festive Carousel)
    -------------------------------------------------------------------------- */
 .feature-banners-section {
-  padding: 1rem 0 4rem;
+  padding: 2.2rem 0 4.5rem;
+  background: var(--color-bg-white);
+  overflow: hidden;
+}
+
+.feature-banners-carousel-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
 }
 
 .feature-banners-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  max-width: 1360px;
-  margin: 0 auto;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .feature-banner-card {
@@ -1566,6 +1675,7 @@ ul {
   padding: 1.6rem 1.5rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
   transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.35s ease;
+  user-select: none;
 }
 
 .feature-banner-card:hover {
@@ -1693,6 +1803,31 @@ ul {
   z-index: 2;
 }
 
+.banner-pagination-dots {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+}
+
+.b-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #d4cfc7;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.b-dot.active {
+  width: 24px;
+  border-radius: 10px;
+  background-color: var(--color-burgundy);
+}
+
 /* Responsive Media Queries */
 @media (max-width: 1024px) {
   .feature-banners-grid {
@@ -1716,23 +1851,23 @@ ul {
 }
 
 @media (max-width: 860px) {
+  .feature-banners-carousel-wrap {
+    overflow: hidden;
+  }
   .feature-banners-grid {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 1.2rem;
-    max-width: 520px;
+    display: flex;
+    gap: 1rem;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
   }
   .feature-banner-card {
+    flex: 0 0 100%;
+    min-width: 100%;
     min-height: 185px;
     padding: 1.5rem 1.6rem;
   }
-  .banner-content {
-    max-width: 60%;
-  }
-  .banner-title {
-    font-size: 1.3rem;
-  }
-  .banner-desc {
-    font-size: 0.85rem;
+  .banner-pagination-dots {
+    display: flex;
   }
 }
 
@@ -1757,6 +1892,7 @@ ul {
     font-size: 0.65rem;
   }
 }
+
 
 
 

@@ -449,5 +449,108 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // Hero Slider Hover & Touch Gestures
+  const heroSliderWrap = document.getElementById('heroSlider');
+  if (heroSliderWrap) {
+    heroSliderWrap.addEventListener('mouseenter', stopAutoSlide);
+    heroSliderWrap.addEventListener('mouseleave', startAutoSlide);
+
+    let heroStartX = 0;
+    heroSliderWrap.addEventListener('touchstart', (e) => {
+      heroStartX = e.touches[0].clientX;
+      stopAutoSlide();
+    }, { passive: true });
+
+    heroSliderWrap.addEventListener('touchend', (e) => {
+      const heroEndX = e.changedTouches[0].clientX;
+      const heroDiffX = heroStartX - heroEndX;
+      if (Math.abs(heroDiffX) > 40) {
+        if (heroDiffX > 0) nextSlide();
+        else prevSlide();
+      }
+      startAutoSlide();
+    }, { passive: true });
+  }
+
+  /* --------------------------------------------------------------------------
+     7. Feature Banners Auto-Scrolling Carousel (Responsive Mobile/Tablet)
+     -------------------------------------------------------------------------- */
+  const bannerCarouselWrap = document.getElementById('featureBannersCarousel');
+  const bannerTrack = document.getElementById('featureBannersTrack');
+  const bannerDots = document.querySelectorAll('#bannerPaginationDots .b-dot');
+  const bannerCards = document.querySelectorAll('.feature-banner-card');
+  let currentBannerIndex = 0;
+  let bannerInterval = null;
+
+  function updateBannerSlide(index) {
+    if (!bannerTrack || bannerCards.length === 0) return;
+    currentBannerIndex = (index + bannerCards.length) % bannerCards.length;
+    
+    // Only translate horizontal track on mobile/tablet (<= 860px)
+    if (window.innerWidth <= 860) {
+      bannerTrack.style.transform = `translateX(-${currentBannerIndex * 100}%)`;
+    } else {
+      bannerTrack.style.transform = 'none';
+    }
+
+    bannerDots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentBannerIndex);
+    });
+  }
+
+  function startBannerAutoSlide() {
+    stopBannerAutoSlide();
+    bannerInterval = setInterval(() => {
+      if (window.innerWidth <= 860) {
+        updateBannerSlide(currentBannerIndex + 1);
+      }
+    }, 3800);
+  }
+
+  function stopBannerAutoSlide() {
+    if (bannerInterval) clearInterval(bannerInterval);
+  }
+
+  bannerDots.forEach(dot => {
+    dot.addEventListener('click', (e) => {
+      const idx = parseInt(e.target.dataset.bindex);
+      updateBannerSlide(idx);
+      startBannerAutoSlide();
+    });
+  });
+
+  if (bannerCarouselWrap) {
+    bannerCarouselWrap.addEventListener('mouseenter', stopBannerAutoSlide);
+    bannerCarouselWrap.addEventListener('mouseleave', startBannerAutoSlide);
+
+    // Touch gesture support for banner carousel
+    let startX = 0;
+    bannerCarouselWrap.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+      stopBannerAutoSlide();
+    }, { passive: true });
+
+    bannerCarouselWrap.addEventListener('touchend', (e) => {
+      const endX = e.changedTouches[0].clientX;
+      const diffX = startX - endX;
+      if (Math.abs(diffX) > 40) {
+        if (diffX > 0) {
+          updateBannerSlide(currentBannerIndex + 1);
+        } else {
+          updateBannerSlide(currentBannerIndex - 1);
+        }
+      }
+      startBannerAutoSlide();
+    }, { passive: true });
+  }
+
+  window.addEventListener('resize', () => {
+    updateBannerSlide(currentBannerIndex);
+  });
+
+  // Start auto-sliding for banners
+  startBannerAutoSlide();
 });
+
 
