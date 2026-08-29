@@ -1,415 +1,597 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>InvestPro - Grow Your Wealth</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BANGLE MAISON - Luxury Jewelry & Bangles</title>
+  <meta name="description" content="Discover our exquisite collection of bangles that add grace to every moment. Timeless beauty, handcrafted for you.">
+  
+  <!-- Google Fonts: Cormorant Garamond for luxury serif typography, Montserrat for clean sans-serif navigation -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- HEADER -->
-<header id="header">
-  <div class="nav-wrap">
-    <a href="index.html" class="logo">
-      <div class="logo-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
-          <polyline points="17 6 23 6 23 12"></polyline>
-        </svg>
-      </div>
-      <div>
-        <span class="logo-title">InvestPro</span>
-        <span class="logo-sub">Grow Your Wealth</span>
-      </div>
-    </a>
-    <nav id="desktop-nav">
-      <ul>
-        <li><a href="index.html" class="nav-link active">Home</a></li>
-        <li><a href="about.html" class="nav-link">About Us</a></li>
-        <li><a href="services.html" class="nav-link">Services</a></li>
-        <li><a href="plans.html" class="nav-link">Investment Plans</a></li>
-        <li><a href="market.html" class="nav-link">Market</a></li>
-        <li><a href="#blogs" class="nav-link">Blog</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="nav-right">
-      <a href="tel:+919876543210" class="phone-icon-btn" aria-label="Call Us">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-        </svg>
-        <span class="phone-text">+91 98765 43210</span>
-      </a>
-      <button class="btn btn-primary consult-desktop-btn" id="consult-btn">Book Free Consultation</button>
-      <button class="hamburger-box" id="hamburger-btn" aria-label="Toggle navigation menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
+  <!-- Announcement Bar (Optional Top Bar for Luxury Feel) -->
+  <div class="announcement-bar" id="announcementBar">
+    <p>Complimentary Worldwide Shipping & Insured Express Delivery on Orders Over $250 | <a href="#">Learn More</a></p>
+    <button class="close-announcement" id="closeAnnouncement" aria-label="Close Announcement">&times;</button>
   </div>
 
-  <!-- MOBILE MENU OVERLAY (MATCHES DESIGN REFERENCE EXACTLY) -->
-  <div class="mobile-menu-overlay" id="mobile-drawer">
-    <div class="mobile-menu-header">
-      <a href="index.html" class="logo">
+  <!-- Header Navigation Area -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      
+      <!-- Mobile Menu Toggle Button -->
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo">
         <div class="logo-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
-            <polyline points="17 6 23 6 23 12"></polyline>
+          <svg viewBox="0 0 50 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 5H30C37 5 42 9 42 16C42 21 38 25 32 26C40 27 45 32 45 39C45 48 38 53 29 53H10V5Z" stroke="#8C2D38" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10 5V53M22 5V53M10 29H31M10 5H28M10 53H29" stroke="#8C2D38" stroke-width="1.5"/>
+            <circle cx="26" cy="16" r="3" fill="#D4AF37"/>
+            <circle cx="28" cy="39" r="3.5" fill="#D4AF37"/>
           </svg>
         </div>
-        <div>
-          <span class="logo-title">InvestPro</span>
-          <span class="logo-sub">Grow Your Wealth</span>
+        <div class="logo-text">
+          <span class="brand-name">BANGLE</span>
+          <span class="brand-tagline">MAISON</span>
         </div>
       </a>
-      <div class="mobile-header-actions">
-        <a href="tel:+919876543210" class="phone-icon-btn-sm" aria-label="Call Us">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="main-nav" id="mainNav">
+        <ul class="nav-list">
+          <li class="nav-item active">
+            <a href="#" class="nav-link">HOME</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link">
+              SHOP
+              <svg class="dropdown-icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </a>
+            <div class="dropdown-menu">
+              <div class="dropdown-content">
+                <div class="dropdown-column">
+                  <h4>Categories</h4>
+                  <ul>
+                    <li><a href="#">Gold Bangles</a></li>
+                    <li><a href="#">Diamond Kada</a></li>
+                    <li><a href="#">Bridal Sets</a></li>
+                    <li><a href="#">Designer Cuffs</a></li>
+                    <li><a href="#">Kundan & Polki</a></li>
+                  </ul>
+                </div>
+                <div class="dropdown-column">
+                  <h4>By Material</h4>
+                  <ul>
+                    <li><a href="#">22K Yellow Gold</a></li>
+                    <li><a href="#">18K Rose Gold</a></li>
+                    <li><a href="#">Platinum & Diamond</a></li>
+                    <li><a href="#">Gemstone Embedded</a></li>
+                  </ul>
+                </div>
+                <div class="dropdown-column menu-banner">
+                  <div class="banner-box">
+                    <span class="badge">NEW</span>
+                    <h5>Royal Heritage 2026</h5>
+                    <p>Handcrafted by Master Artisans</p>
+                    <a href="#" class="banner-link">Explore Collection &rarr;</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link">
+              COLLECTIONS
+              <svg class="dropdown-icon" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </a>
+            <div class="dropdown-menu dropdown-simple">
+              <ul>
+                <li><a href="#">Royal Heritage</a></li>
+                <li><a href="#">Modern Minimalist</a></li>
+                <li><a href="#">Festive Sparkle</a></li>
+                <li><a href="#">Bridal Couture Edition</a></li>
+                <li><a href="#">Limited Masterpieces</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">NEW ARRIVALS</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">ABOUT US</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">CONTACT</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Utility Actions (Search, Account, Wishlist, Cart) -->
+      <div class="header-actions">
+        <!-- Search Trigger -->
+        <button class="action-btn search-btn" id="searchToggle" aria-label="Search">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <!-- Account Link / Trigger -->
+        <a href="#" class="action-btn account-btn" id="accountToggle" aria-label="Account">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
           </svg>
         </a>
-        <button class="close-menu-btn" id="close-drawer-btn" aria-label="Close menu">&times;</button>
+
+        <!-- Wishlist Icon -->
+        <a href="#" class="action-btn wishlist-btn" id="wishlistToggle" aria-label="Wishlist">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="action-badge wishlist-count" id="wishlistCount">0</span>
+        </a>
+
+        <!-- Shopping Cart Icon with Badge -->
+        <button class="action-btn cart-btn" id="cartToggle" aria-label="Cart">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="action-badge cart-count" id="cartCount">0</span>
+        </button>
       </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Off-Canvas Drawer -->
+  <div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <div class="drawer-logo">
+        <span class="brand-name">BANGLE</span>
+        <span class="brand-tagline">MAISON</span>
+      </div>
+      <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
     </div>
     
-    <div class="mobile-menu-body">
-      <ul class="mobile-nav-list">
-        <li><a href="index.html" class="m-link active">Home</a></li>
-        <li><a href="about.html" class="m-link">About Us</a></li>
-        <li class="has-submenu">
-          <div class="m-link-row">
-            <a href="services.html" class="m-link">Services</a>
-            <span class="sub-arrow" onclick="toggleSubmenu(this)">▾</span>
+    <div class="drawer-search">
+      <input type="text" placeholder="Search bangles, collections..." id="mobileSearchInput">
+      <button aria-label="Search button">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </button>
+    </div>
+
+    <ul class="mobile-nav-list">
+      <li class="mobile-nav-item active">
+        <a href="#">HOME</a>
+      </li>
+      <li class="mobile-nav-item has-accordion">
+        <button class="accordion-trigger">
+          <span>SHOP</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <ul class="accordion-content">
+          <li><a href="#">Gold Bangles</a></li>
+          <li><a href="#">Diamond Kada</a></li>
+          <li><a href="#">Bridal Sets</a></li>
+          <li><a href="#">Designer Cuffs</a></li>
+          <li><a href="#">Kundan & Polki</a></li>
+          <li><a href="#">22K Yellow Gold</a></li>
+        </ul>
+      </li>
+      <li class="mobile-nav-item has-accordion">
+        <button class="accordion-trigger">
+          <span>COLLECTIONS</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <ul class="accordion-content">
+          <li><a href="#">Royal Heritage</a></li>
+          <li><a href="#">Modern Minimalist</a></li>
+          <li><a href="#">Festive Sparkle</a></li>
+          <li><a href="#">Bridal Edition</a></li>
+        </ul>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="#">NEW ARRIVALS</a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="#">ABOUT US</a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="#">CONTACT</a>
+      </li>
+    </ul>
+
+    <div class="drawer-footer">
+      <div class="drawer-actions">
+        <a href="#"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> My Account</a>
+        <a href="#"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg> Wishlist (<span id="mobileWishlistCount">0</span>)</a>
+      </div>
+      <p class="copyright">&copy; 2026 Bangle Maison. All Rights Reserved.</p>
+    </div>
+  </aside>
+
+  <!-- Interactive Fullscreen Search Overlay -->
+  <div class="search-overlay" id="searchOverlay">
+    <button class="search-close" id="searchClose" aria-label="Close search overlay">&times;</button>
+    <div class="search-modal-container">
+      <h3>SEARCH OUR BOUTIQUE</h3>
+      <form class="search-form" id="searchForm">
+        <input type="text" placeholder="Search for gold bangles, ruby kada, diamond cuffs..." id="searchInput" autofocus>
+        <button type="submit" aria-label="Submit Search">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+      </form>
+      <div class="search-popular">
+        <span>Popular Searches:</span>
+        <a href="#" class="tag">Bridal Gold Bangles</a>
+        <a href="#" class="tag">Diamond Kada</a>
+        <a href="#" class="tag">Ruby Enamel Cuffs</a>
+        <a href="#" class="tag">24K Polki Set</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shopping Cart Side Drawer -->
+  <div class="cart-drawer-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>YOUR SHOPPING BAG (<span id="cartDrawerCount">0</span>)</h3>
+      <button class="cart-close" id="cartClose" aria-label="Close cart">&times;</button>
+    </div>
+    <div class="cart-body" id="cartBody">
+      <div class="empty-cart-view" id="emptyCart">
+        <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="#ccc" stroke-width="1.5">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+        <p>Your shopping bag is currently empty.</p>
+        <button class="btn btn-primary shop-now-btn" id="startShoppingBtn">EXPLORE COLLECTIONS</button>
+      </div>
+      <div class="cart-items" id="cartItemsList" style="display: none;">
+        <!-- Items added dynamically via JavaScript -->
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display: none;">
+      <div class="subtotal-row">
+        <span>Subtotal</span>
+        <span class="subtotal-amount" id="cartSubtotal">$0.00</span>
+      </div>
+      <p class="shipping-note">Taxes and shipping calculated at checkout</p>
+      <button class="btn btn-primary checkout-btn">PROCEED TO CHECKOUT</button>
+    </div>
+  </aside>
+
+  <!-- Hero Section Matching Image Exactly -->
+  <main>
+    <section class="hero-slider" id="heroSlider">
+      <div class="hero-slides-wrapper">
+        
+        <!-- Slide 1 (Matching Image) -->
+        <div class="hero-slide active" style="--bg-url: url('https://images.unsplash.com/photo-1611591475179-42dd450d0322?q=80&w=2000&auto=format&fit=crop');">
+          <div class="hero-overlay"></div>
+          <div class="hero-container">
+            <div class="hero-content">
+              <h1 class="hero-title">Timeless Beauty,<br>Crafted for You</h1>
+              <p class="hero-subtitle">Discover our exquisite collection of bangles that add grace to every moment.</p>
+              <a href="#shop" class="btn btn-burgundy" id="addDemoItemBtn">SHOP COLLECTION</a>
+            </div>
           </div>
-          <ul class="m-submenu">
-            <li><a href="stock-market.html">Stock Market Investment</a></li>
-            <li><a href="services.html">Mutual Funds</a></li>
-            <li><a href="services.html">SIP Planning</a></li>
-            <li><a href="services.html">Retirement Planning</a></li>
-            <li><a href="services.html">Wealth Management</a></li>
-            <li><a href="services.html">Portfolio Analysis</a></li>
-          </ul>
-        </li>
-        <li><a href="plans.html" class="m-link">Investment Plans</a></li>
-        <li><a href="market.html" class="m-link">Market</a></li>
-        <li class="has-submenu">
-          <div class="m-link-row">
-            <a href="#calculator" class="m-link">Resources</a>
-            <span class="sub-arrow" onclick="toggleSubmenu(this)">▾</span>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="hero-slide" style="--bg-url: url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=2000&auto=format&fit=crop');">
+          <div class="hero-overlay"></div>
+          <div class="hero-container">
+            <div class="hero-content">
+              <h1 class="hero-title">Royal Heritage<br>Gold Edition</h1>
+              <p class="hero-subtitle">Handcrafted 22K yellow gold bangles infused with royal Indian craftsmanship.</p>
+              <a href="#shop" class="btn btn-burgundy">EXPLORE HERITAGE</a>
+            </div>
           </div>
-          <ul class="m-submenu">
-            <li><a href="#calculator">Investment Calculator</a></li>
-            <li><a href="market.html">Market Updates</a></li>
-            <li><a href="services.html#faq">FAQs & Guides</a></li>
-          </ul>
-        </li>
-        <li><a href="#blogs" class="m-link">Blog</a></li>
-        <li><a href="#contact" class="m-link">Contact</a></li>
-      </ul>
-    </div>
-
-    <div class="mobile-menu-footer">
-      <button class="btn btn-primary btn-lg w-full" id="mobile-consult-btn">Book Free Consultation</button>
-    </div>
-  </div>
-</header>
-
-<!-- HERO -->
-<section class="hero" id="home">
-  <!-- Glowing green graph trendline SVG overlay -->
-  <svg class="hero-graph-overlay" viewBox="0 0 1200 400" preserveAspectRatio="none">
-    <path d="M 0 350 Q 200 320, 350 280 T 600 180 T 800 90 T 1200 40" fill="none" stroke="#22c55e" stroke-width="3" opacity="0.4" />
-    <circle cx="350" cy="280" r="5" fill="#4ade80" />
-    <circle cx="600" cy="180" r="6" fill="#4ade80" />
-    <circle cx="800" cy="90" r="7" fill="#4ade80" />
-    <circle cx="1050" cy="50" r="6" fill="#4ade80" />
-  </svg>
-
-  <div class="hero-inner">
-    <div>
-      <h1>Smart Investments<br>Better <span class="accent">Future</span></h1>
-      <p>We help you grow your wealth with trusted investment solutions and expert guidance.</p>
-      <div class="hero-btns">
-        <a href="#plans" class="btn btn-primary">Start Investing →</a>
-        <a href="services.html" class="btn btn-outline">Our Services</a>
-      </div>
-    </div>
-    <div class="market-card" id="market-carousel-card">
-      <div class="market-card-head">
-        <div class="mc-title-wrap">
-          <h3>Market Overview</h3>
-          <span class="mc-live-badge"><span class="pulse-dot-sm"></span> LIVE</span>
         </div>
-        <div class="mc-controls">
-          <button class="mc-nav-btn" id="mc-prev" aria-label="Previous Slide">&lsaquo;</button>
-          <button class="mc-nav-btn" id="mc-next" aria-label="Next Slide">&rsaquo;</button>
-          <a href="#market" class="mc-view-more">View All</a>
+
+        <!-- Slide 3 -->
+        <div class="hero-slide" style="--bg-url: url('https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=2000&auto=format&fit=crop');">
+          <div class="hero-overlay"></div>
+          <div class="hero-container">
+            <div class="hero-content">
+              <h1 class="hero-title">The Bridal<br>Masterpiece</h1>
+              <p class="hero-subtitle">Unveiling our signature diamond and uncut emerald kada bangles for your special day.</p>
+              <a href="#shop" class="btn btn-burgundy">VIEW BRIDAL COUTURE</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="hero-slide" style="--bg-url: url('https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=2000&auto=format&fit=crop');">
+          <div class="hero-overlay"></div>
+          <div class="hero-container">
+            <div class="hero-content">
+              <h1 class="hero-title">Modern Grace,<br>Everyday Elegance</h1>
+              <p class="hero-subtitle">Sleek minimalist cuffs and stackable gold bangles engineered for contemporary women.</p>
+              <a href="#shop" class="btn btn-burgundy">SHOP MINIMALIST</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Navigation Arrows (Left & Right white circular buttons like image) -->
+      <button class="slider-arrow arrow-left" id="prevSlide" aria-label="Previous Slide">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <button class="slider-arrow arrow-right" id="nextSlide" aria-label="Next Slide">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+
+      <!-- Pagination Dots (4 dots at bottom center as in reference image) -->
+      <div class="slider-pagination" id="sliderPagination">
+        <button class="dot active" data-index="0" aria-label="Slide 1"></button>
+        <button class="dot" data-index="1" aria-label="Slide 2"></button>
+        <button class="dot" data-index="2" aria-label="Slide 3"></button>
+        <button class="dot" data-index="3" aria-label="Slide 4"></button>
+      </div>
+
+    </section>
+
+    <!-- Timeless Beauty, Crafted for You Section -->
+    <section class="shop-by-collection timeless-beauty-section" id="timeless-beauty">
+      <div class="container">
+        
+        <!-- Section Header with Left/Right Lines and Ornamental Divider -->
+        <div class="section-header">
+          <div class="section-title-wrapper">
+            <div class="title-line"></div>
+            <h2 class="section-title">SHOP BY COLLECTION</h2>
+            <div class="title-line"></div>
+          </div>
+          <div class="title-ornament">
+            <svg viewBox="0 0 60 15" width="45" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 7.5H22M38 7.5H60" stroke="#c5a059" stroke-width="1.2"/>
+              <polygon points="30,2 35,7.5 30,13 25,7.5" fill="#ab7e42"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- 8 Circular Category Items Grid -->
+        <div class="collections-grid">
+          
+          <!-- Item 1: Royal Kada -->
+          <div class="collection-card" data-category="royal-kada" tabindex="0">
+            <div class="circle-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=500&auto=format&fit=crop" alt="Royal Kada Bangles" loading="lazy">
+              <div class="card-overlay">
+                <span class="view-btn">EXPLORE</span>
+              </div>
+            </div>
+            <div class="collection-label">
+              <h4 class="category-name">Royal Kada</h4>
+              <span class="category-type">Bangles</span>
+            </div>
+          </div>
+
+          <!-- Item 2: Diamond Cuff -->
+          <div class="collection-card" data-category="diamond-cuff" tabindex="0">
+            <div class="circle-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?q=80&w=500&auto=format&fit=crop" alt="Diamond Cuff Bangles" loading="lazy">
+              <div class="card-overlay">
+                <span class="view-btn">EXPLORE</span>
+              </div>
+            </div>
+            <div class="collection-label">
+              <h4 class="category-name">Diamond Cuff</h4>
+              <span class="category-type">Bangles</span>
+            </div>
+          </div>
+
+          <!-- Item 3: Emerald Cut -->
+          <div class="collection-card" data-category="emerald-cut" tabindex="0">
+            <div class="circle-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=500&auto=format&fit=crop" alt="Emerald Cut Bangles" loading="lazy">
+              <div class="card-overlay">
+                <span class="view-btn">EXPLORE</span>
+              </div>
+            </div>
+            <div class="collection-label">
+              <h4 class="category-name">Emerald Cut</h4>
+              <span class="category-type">Bangles</span>
+            </div>
+          </div>
+
+          <!-- Item 4: Antique Finish -->
+          <div class="collection-card" data-category="antique-finish" tabindex="0">
+            <div class="circle-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=500&auto=format&fit=crop" alt="Antique Finish Bangles" loading="lazy">
+              <div class="card-overlay">
+                <span class="view-btn">EXPLORE</span>
+              </div>
+            </div>
+            <div class="collection-label">
+              <h4 class="category-name">Antique Finish</h4>
+              <span class="category-type">Bangles</span>
+            </div>
+          </div>
+
+          <!-- Item 5: Rose Gold -->
+          <div class="collection-card" data-category="rose-gold" tabindex="0">
+            <div class="circle-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=500&auto=format&fit=crop" alt="Rose Gold Bangles" loading="lazy">
+              <div class="card-overlay">
+                <span class="view-btn">EXPLORE</span>
+              </div>
+            </div>
+            <div class="collection-label">
+              <h4 class="category-name">Rose Gold</h4>
+              <span class="category-type">Bangles</span>
+            </div>
+          </div>
+
+          <!-- Item 6: Ruby Embedded -->
+          <div class="collection-card" data-category="ruby-embedded" tabindex="0">
+            <div class="circle-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=500&auto=format&fit=crop" alt="Ruby Embedded Bangles" loading="lazy">
+              <div class="card-overlay">
+                <span class="view-btn">EXPLORE</span>
+              </div>
+            </div>
+            <div class="collection-label">
+              <h4 class="category-name">Ruby Embedded</h4>
+              <span class="category-type">Bangles</span>
+            </div>
+          </div>
+
+          <!-- Item 7: Temple Design -->
+          <div class="collection-card" data-category="temple-design" tabindex="0">
+            <div class="circle-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?q=80&w=500&auto=format&fit=crop" alt="Temple Design Bangles" loading="lazy">
+              <div class="card-overlay">
+                <span class="view-btn">EXPLORE</span>
+              </div>
+            </div>
+            <div class="collection-label">
+              <h4 class="category-name">Temple Design</h4>
+              <span class="category-type">Bangles</span>
+            </div>
+          </div>
+
+          <!-- Item 8: Solitaire Kada -->
+          <div class="collection-card" data-category="solitaire-kada" tabindex="0">
+            <div class="circle-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1611591475179-42dd450d0322?q=80&w=500&auto=format&fit=crop" alt="Solitaire Kada Bangles" loading="lazy">
+              <div class="card-overlay">
+                <span class="view-btn">EXPLORE</span>
+              </div>
+            </div>
+            <div class="collection-label">
+              <h4 class="category-name">Solitaire Kada</h4>
+              <span class="category-type">Bangles</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Feature Banners Section (Bridal, New Arrivals, Festive) -->
+    <section class="feature-banners-section">
+      <div class="container">
+        <div class="feature-banners-grid">
+          
+          <!-- Banner Card 1: Bridal Collection -->
+          <div class="feature-banner-card banner-bridal">
+            <div class="banner-content">
+              <h3 class="banner-title">BRIDAL<br>COLLECTION</h3>
+              <p class="banner-desc">For your special day to remember forever.</p>
+              <a href="#shop" class="banner-btn">EXPLORE NOW</a>
+            </div>
+            <div class="banner-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=600&auto=format&fit=crop" alt="Bridal Collection Bangles" loading="lazy">
+            </div>
+          </div>
+
+          <!-- Banner Card 2: New Arrivals -->
+          <div class="feature-banner-card banner-arrivals">
+            <div class="banner-content">
+              <h3 class="banner-title">NEW<br>ARRIVALS</h3>
+              <p class="banner-desc">Explore our latest stunning designs.</p>
+              <a href="#shop" class="banner-btn">SHOP NOW</a>
+            </div>
+            <div class="banner-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?q=80&w=600&auto=format&fit=crop" alt="New Arrivals Bangles" loading="lazy">
+            </div>
+          </div>
+
+          <!-- Banner Card 3: Festive Collection -->
+          <div class="feature-banner-card banner-festive">
+            <div class="banner-content">
+              <h3 class="banner-title">FESTIVE<br>COLLECTION</h3>
+              <p class="banner-desc">Shine bright this festive season.</p>
+              <a href="#shop" class="banner-btn">EXPLORE NOW</a>
+            </div>
+            <div class="banner-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=600&auto=format&fit=crop" alt="Festive Collection Bangles" loading="lazy">
+            </div>
+          </div>
+
         </div>
       </div>
-      
-      <!-- Carousel viewport & slides track -->
-      <div class="mc-viewport">
-        <div class="mc-track" id="mc-track">
-          <!-- Dynamic slide content populated by script.js -->
+    </section>
+
+    <!-- Collection Quick View Modal -->
+    <div class="collection-modal-overlay" id="collectionModalOverlay">
+      <div class="collection-modal">
+        <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+        <div class="modal-content-grid">
+          <div class="modal-img-box">
+            <img id="modalCategoryImg" src="" alt="Collection Image">
+          </div>
+          <div class="modal-info-box">
+            <span class="modal-badge" id="modalBadge">POPULAR COLLECTION</span>
+            <h3 id="modalCategoryTitle">Traditional Collection</h3>
+            <p class="modal-desc" id="modalCategoryDesc">
+              Handcrafted with timeless artistry and 22K pure gold finish. Perfect for traditional celebrations, weddings, and festive occasions.
+            </p>
+            <div class="modal-stats">
+              <div class="stat-item">
+                <span class="stat-num" id="modalItemCount">34+</span>
+                <span class="stat-label">Designs</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-num">22K / 18K</span>
+                <span class="stat-label">Purity</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-num">100%</span>
+                <span class="stat-label">Certified</span>
+              </div>
+            </div>
+            <div class="modal-actions">
+              <button class="btn btn-burgundy" id="modalExploreBtn">SHOP THIS COLLECTION</button>
+            </div>
+          </div>
         </div>
       </div>
-
-      <!-- Carousel Pagination Dots -->
-      <div class="mc-dots" id="mc-dots"></div>
     </div>
-  </div>
-</section>
+  </main>
 
-
-<!-- OUR SERVICES, CALCULATOR & WHY CHOOSE US 3-COLUMN GRID -->
-<section class="container top-grid">
-  <!-- COLUMN 1: OUR SERVICES -->
-  <div>
-    <h2 class="section-title">Our Services</h2>
-    <div class="section-underline"></div>
-    <div id="services-grid" class="services-grid"></div>
-  </div>
-
-  <!-- COLUMN 2: INVESTMENT CALCULATOR -->
-  <div id="calculator">
-    <h2 class="section-title">Investment Calculator</h2>
-    <div class="section-underline"></div>
-    <div class="calc-box">
-      <div class="calc-row">
-        <div class="calc-label">
-          <span>Monthly Investment (₹)</span>
-          <span class="calc-val-pill" id="mi-val">10,000</span>
-        </div>
-        <input type="range" id="mi" min="500" max="100000" step="500" value="10000">
-      </div>
-
-      <div class="calc-row">
-        <div class="calc-label">
-          <span>Expected Return (%)</span>
-          <span class="calc-val-pill" id="er-val">12%</span>
-        </div>
-        <input type="range" id="er" min="1" max="30" step="1" value="12">
-      </div>
-
-      <div class="calc-row">
-        <div class="calc-label">
-          <span>Time Period (Years)</span>
-          <span class="calc-val-pill" id="tp-val">10 Year</span>
-        </div>
-        <input type="range" id="tp" min="1" max="40" step="1" value="10">
-      </div>
-
-      <div class="calc-result">
-        <div>
-          <span>Total Investment</span>
-          <b id="total-inv">₹12,00,000</b>
-        </div>
-        <div>
-          <span>Estimated Returns</span>
-          <b id="est-ret" style="color:var(--green)">₹7,75,219</b>
-        </div>
-      </div>
-
-      <div class="calc-final">
-        <span>Final Value</span>
-        <b id="final-val">₹19,75,219</b>
-      </div>
-    </div>
-  </div>
-
-  <!-- COLUMN 3: WHY CHOOSE US -->
-  <div>
-    <h2 class="section-title">Why Choose Us?</h2>
-    <div class="section-underline"></div>
-    <ul class="why-list" id="why-list"></ul>
-  </div>
-</section>
-
-<!-- STATS STRIP -->
-<section class="stats-strip">
-  <div class="container" id="stats-strip"></div>
-</section>
-
-<!-- LIVE MARKET -->
-<section class="container live-market" id="market">
-  <div class="live-head">
-    <h2><span class="dot-live"></span> Live Market Updates <span class="live-status">Market is Open</span></h2>
-    <a class="view-link" href="#">View All Markets →</a>
-  </div>
-  <div class="live-grid" id="live-grid"></div>
-</section>
-
-<!-- PLANS -->
-<section class="plans" id="plans">
-  <div class="container">
-    <div class="plans-head">
-      <h2>Investment Plans</h2>
-      <a class="view-link" href="#">View All Plans →</a>
-    </div>
-    <div class="plans-grid" id="plans-grid"></div>
-  </div>
-</section>
-
-<!-- WHY INVEST / TESTIMONIAL / PROCESS -->
-<section class="container invest-grid">
-  <div>
-    <h2 class="section-title" style="font-size:18px;">Why Invest With Us?</h2>
-    <div class="section-underline"></div>
-    <ul class="check-list" id="check-list"></ul>
-    <div class="target-img">
-      <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=600&auto=format&fit=crop" alt="target growth">
-    </div>
-  </div>
-
-  <div>
-    <h2 class="section-title" style="font-size:18px;">What Our Clients Say</h2>
-    <div class="section-underline"></div>
-    <div class="testi-card">
-      <div class="testi-quote">"</div>
-      <p>InvestPro has completely changed the way I invest. Their advisors are very professional and helped me grow my wealth consistently.</p>
-      <div class="testi-person">
-        <img src="https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?q=80&w=200&auto=format&fit=crop" alt="Rohit Sharma">
-        <div><b>Rohit Sharma</b><span>Happy Client</span></div>
-      </div>
-      <div class="dots"><span class="on"></span><span></span><span></span><span></span><span></span></div>
-    </div>
-  </div>
-
-  <div>
-    <h2 class="section-title" style="font-size:18px;">Our 4 Step Investment Process</h2>
-    <div class="section-underline"></div>
-    <div class="process-steps" id="process-steps"></div>
-  </div>
-</section>
-
-<!-- BLOGS -->
-<section class="container blogs" id="blogs">
-  <div class="blogs-head">
-    <h2>Latest Blogs & News</h2>
-    <a class="view-link" href="#">View All Blogs →</a>
-  </div>
-  <div class="blog-grid" id="blog-grid"></div>
-</section>
-
-<!-- NEWSLETTER -->
-<section class="newsletter">
-  <div class="container">
-    <div>
-      <h3>Stay Updated with Investment Insights</h3>
-      <p>Subscribe to our newsletter and get the latest market updates and investment tips.</p>
-    </div>
-    <form onsubmit="return false;">
-      <input type="email" placeholder="Enter your email address" required>
-      <button class="btn btn-primary" type="submit">Subscribe</button>
-    </form>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="container foot-grid">
-    <div class="foot-about">
-      <div class="foot-logo"><div class="logo-icon">📈</div>InvestPro</div>
-      <p style="margin-top:-8px; margin-bottom:14px; color:#6b7280; font-size:12px;">Grow Your Wealth</p>
-      <p>We are committed to helping you grow your wealth with trusted investment solutions and personalized financial advice.</p>
-      <div class="foot-social">
-        <a href="#">f</a><a href="#">𝕏</a><a href="#">in</a><a href="#">◎</a><a href="#">▶</a>
-      </div>
-    </div>
-    <div>
-      <h5>Quick Links</h5>
-      <ul>
-        <li><a href="index.html#home">Home</a></li>
-        <li><a href="index.html#about">About Us</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="index.html#plans">Investment Plans</a></li>
-        <li><a href="index.html#market">Market</a></li>
-        <li><a href="index.html#blogs">Blog</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-      </ul>
-    </div>
-    <div>
-      <h5>Our Services</h5>
-      <ul>
-        <li><a href="services.html">Stock Market Investment</a></li>
-        <li><a href="services.html">Mutual Funds</a></li>
-        <li><a href="services.html">SIP Planning</a></li>
-        <li><a href="services.html">Retirement Planning</a></li>
-        <li><a href="services.html">Wealth Management</a></li>
-        <li><a href="services.html">Portfolio Analysis</a></li>
-      </ul>
-    </div>
-    <div>
-      <h5>Resources</h5>
-      <ul>
-        <li><a href="#">Investment Calculator</a></li>
-        <li><a href="#">Market Updates</a></li>
-        <li><a href="#">FAQs</a></li>
-        <li><a href="#">Download App</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms & Conditions</a></li>
-      </ul>
-    </div>
-    <div>
-      <h5>Contact Us</h5>
-      <ul class="foot-contact">
-        <li>📞 +91 98765 43210</li>
-        <li>✉️ info@investpro.com</li>
-        <li>📍 123, Finance Street, Mumbai, Maharashtra - 400001</li>
-        <li>🛡️ SEBI Registered Investment Advisor</li>
-      </ul>
-    </div>
-  </div>
-  <div class="container foot-bottom">
-    <span>© 2024 InvestPro. All Rights Reserved.</span>
-    <div class="badges"><span>✅ Secure Investments</span><span>🛡️ SEBI Registered</span></div>
-  </div>
-</footer>
-
-<!-- CONSULTATION MODAL DIALOG -->
-<div class="modal-overlay" id="consult-modal">
-  <div class="modal-content">
-    <button class="modal-close" id="close-consult-modal">&times;</button>
-    <div class="modal-header">
-      <span class="modal-badge">100% Free Advisory Call</span>
-      <h3>Book Free Consultation</h3>
-      <p>Speak directly with a SEBI registered wealth manager.</p>
-    </div>
-    <form id="consult-form" onsubmit="return false;">
-      <div class="form-group">
-        <label for="c-name">Full Name *</label>
-        <input type="text" id="c-name" placeholder="e.g. Rahul Sharma" required>
-      </div>
-      <div class="form-group">
-        <label for="c-phone">Mobile Number *</label>
-        <input type="tel" id="c-phone" placeholder="e.g. +91 98765 43210" required>
-      </div>
-      <div class="form-group">
-        <label for="c-email">Email Address *</label>
-        <input type="email" id="c-email" placeholder="e.g. rahul@example.com" required>
-      </div>
-      <div class="form-group">
-        <label for="c-topic">Select Topic</label>
-        <select id="c-topic">
-          <option value="sip">SIP & Mutual Fund Advisory</option>
-          <option value="stocks">Equity & Stock Market Baskets</option>
-          <option value="retirement">Retirement & Pension Corpus</option>
-          <option value="wealth">Comprehensive Wealth Strategy</option>
-        </select>
-      </div>
-      <button type="submit" class="btn btn-primary w-full" style="margin-top:10px;">Confirm Free Session &rarr;</button>
-    </form>
-  </div>
-</div>
-
-<!-- TOAST CONTAINER -->
-<div id="toast-container"></div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
