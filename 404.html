@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bangle Maison — Page Redirect</title>
+  <script>
+    (function() {
+      var path = window.location.pathname;
+      var hash = window.location.hash || '';
+      // If user visits /admin or /admin/
+      if (path.endsWith('/admin') || path.endsWith('/admin/')) {
+        window.location.replace('admin.html' + hash);
+        return;
+      }
+      if (path.includes('/admin/')) {
+        window.location.replace('../admin.html' + hash);
+        return;
+      }
+      // If user visits /collections
+      if (path.endsWith('/collections') || path.endsWith('/collections/')) {
+        window.location.replace('collections.html' + hash);
+        return;
+      }
+      // If user visits /shop
+      if (path.endsWith('/shop') || path.endsWith('/shop/')) {
+        window.location.replace('shop.html' + hash);
+        return;
+      }
+    })();
+  </script>
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: #f6efe2;
+      color: #2b040a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    .box {
+      background: #ffffff;
+      padding: 40px 30px;
+      border-radius: 12px;
+      border: 1px solid #e6d9c2;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      max-width: 420px;
+    }
+    h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 28px; margin-bottom: 12px; }
+    p { font-size: 14px; color: #5c4a41; margin-bottom: 20px; }
+    a {
+      display: inline-block;
+      background: #3a0b13;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 13px;
+    }
+    a:hover { background: #2b040a; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Redirecting...</h2>
+    <p>Navigating to your destination. If not redirected automatically:</p>
+    <a href="admin.html">Go to Admin Dashboard</a>
+    <div style="margin-top: 15px;">
+      <a href="index.html" style="background: transparent; color: #3a0b13; border: 1px solid #3a0b13;">Go to Storefront</a>
+    </div>
+  </div>
+</body>
+</html>

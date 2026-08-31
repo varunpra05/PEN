@@ -833,34 +833,34 @@ ul {
 }
 
 /* --------------------------------------------------------------------------
-   7. Hero Banner Carousel (Refined Luxury Layout & Compact Proportions)
+   7. Hero Banner Carousel (Full Width Edge-to-Edge Luxury Design)
    -------------------------------------------------------------------------- */
 .hero-slider {
   position: relative;
   width: 100%;
-  background-color: #fbf7f0;
   overflow: hidden;
   user-select: none;
   margin: 0;
-  padding: 1rem 0 1.2rem;
+  padding: 0;
+  background-color: #2b040a;
 }
 
 .hero-slider-inner {
   position: relative;
   width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .hero-slides-wrapper {
   position: relative;
   width: 100%;
   aspect-ratio: 2 / 1;
-  max-height: 420px;
+  max-height: 520px;
   overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(56, 7, 13, 0.08);
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .hero-slide {
@@ -903,8 +903,8 @@ ul {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(8px);
@@ -914,7 +914,7 @@ ul {
   align-items: center;
   justify-content: center;
   z-index: 20;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.14);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.16);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
 }
@@ -924,21 +924,21 @@ ul {
   color: #ffffff;
   border-color: var(--color-burgundy);
   transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 8px 24px rgba(56, 7, 13, 0.3);
+  box-shadow: 0 8px 24px rgba(56, 7, 13, 0.35);
 }
 
 .arrow-left {
-  left: 2.5rem;
+  left: 2rem;
 }
 
 .arrow-right {
-  right: 2.5rem;
+  right: 2rem;
 }
 
 /* Pagination Dots */
 .slider-pagination {
   position: absolute;
-  bottom: 1rem;
+  bottom: 1.2rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -946,7 +946,7 @@ ul {
   gap: 0.6rem;
   z-index: 20;
   background: rgba(43, 4, 10, 0.45);
-  padding: 5px 12px;
+  padding: 5px 14px;
   border-radius: 30px;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(212, 175, 55, 0.3);
@@ -969,23 +969,15 @@ ul {
 
 .slider-pagination .dot.active {
   background-color: #d4af37;
-  width: 22px;
+  width: 24px;
   border-radius: 6px;
   box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
 }
 
 /* Responsive Media Queries */
 @media (max-width: 992px) {
-  .hero-slider {
-    padding: 0.6rem 0 0.8rem;
-  }
-
-  .hero-slider-inner {
-    padding: 0 1rem;
-  }
-
   .hero-slides-wrapper {
-    max-height: 380px;
+    max-height: 440px;
   }
   
   .slider-arrow {
@@ -994,16 +986,16 @@ ul {
   }
   
   .arrow-left {
-    left: 1.8rem;
+    left: 1.2rem;
   }
   
   .arrow-right {
-    right: 1.8rem;
+    right: 1.2rem;
   }
 
   .slider-pagination {
-    bottom: 0.8rem;
-    padding: 4px 10px;
+    bottom: 0.9rem;
+    padding: 4px 11px;
   }
 }
 
