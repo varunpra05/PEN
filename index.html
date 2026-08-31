@@ -176,43 +176,45 @@
   <!-- Hero Banner Slider (Matching Reference Designs Exactly) -->
   <main>
     <section class="hero-slider" id="heroSlider">
-      <div class="hero-slides-wrapper">
-        
-        <!-- Slide 1 -->
-        <div class="hero-slide active">
-          <a href="collections.html" class="hero-slide-link" aria-label="Explore Collection - Timeless Beauty, Crafted for You">
-            <img src="images/banner_slide1.jpg" alt="Timeless Beauty, Crafted for You - Shree Raja Ram Bangles" class="hero-slide-img">
-          </a>
+      <div class="hero-slider-inner">
+        <div class="hero-slides-wrapper">
+          
+          <!-- Slide 1 -->
+          <div class="hero-slide active">
+            <a href="collections.html" class="hero-slide-link" aria-label="Explore Collection - Timeless Beauty, Crafted for You">
+              <img src="images/banner_slide1.jpg" alt="Timeless Beauty, Crafted for You - Shree Raja Ram Bangles" class="hero-slide-img">
+            </a>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="hero-slide">
+            <a href="shop.html" class="hero-slide-link" aria-label="Shop Collection - Timeless Beauty, Crafted for You">
+              <img src="images/banner_slide2.jpg" alt="Timeless Beauty, Crafted for You - Exquisite Bangles" class="hero-slide-img">
+            </a>
+          </div>
+
         </div>
 
-        <!-- Slide 2 -->
-        <div class="hero-slide">
-          <a href="shop.html" class="hero-slide-link" aria-label="Shop Collection - Timeless Beauty, Crafted for You">
-            <img src="images/banner_slide2.jpg" alt="Timeless Beauty, Crafted for You - Exquisite Bangles" class="hero-slide-img">
-          </a>
+        <!-- Navigation Arrows -->
+        <button class="slider-arrow arrow-left" id="prevSlide" aria-label="Previous Slide">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <button class="slider-arrow arrow-right" id="nextSlide" aria-label="Next Slide">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+
+        <!-- Pagination Dots -->
+        <div class="slider-pagination" id="sliderPagination">
+          <button class="dot active" data-index="0" aria-label="Slide 1"></button>
+          <button class="dot" data-index="1" aria-label="Slide 2"></button>
         </div>
 
       </div>
-
-      <!-- Navigation Arrows -->
-      <button class="slider-arrow arrow-left" id="prevSlide" aria-label="Previous Slide">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="15 18 9 12 15 6"></polyline>
-        </svg>
-      </button>
-
-      <button class="slider-arrow arrow-right" id="nextSlide" aria-label="Next Slide">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="9 18 15 12 9 6"></polyline>
-        </svg>
-      </button>
-
-      <!-- Pagination Dots -->
-      <div class="slider-pagination" id="sliderPagination">
-        <button class="dot active" data-index="0" aria-label="Slide 1"></button>
-        <button class="dot" data-index="1" aria-label="Slide 2"></button>
-      </div>
-
     </section>
 
 

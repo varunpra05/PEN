@@ -833,23 +833,30 @@ ul {
 }
 
 /* --------------------------------------------------------------------------
-/* --------------------------------------------------------------------------
-   7. Hero Section (Matching Reference Banner Carousel Exactly)
+   7. Hero Banner Carousel (Refined Luxury Layout & Proportions)
    -------------------------------------------------------------------------- */
 .hero-slider {
   position: relative;
   width: 100%;
+  background-color: #f7efe4;
   overflow: hidden;
   user-select: none;
-  background-color: transparent;
   margin: 0;
   padding: 0;
+}
+
+.hero-slider-inner {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .hero-slides-wrapper {
   position: relative;
   width: 100%;
   aspect-ratio: 2 / 1;
+  max-height: 560px;
   overflow: hidden;
 }
 
@@ -860,8 +867,8 @@ ul {
   height: 100%;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: scale(1.02);
+  transition: opacity 0.75s cubic-bezier(0.4, 0, 0.2, 1), transform 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scale(1.015);
   z-index: 1;
 }
 
@@ -893,18 +900,19 @@ ul {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
   color: var(--color-burgundy);
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  border: 1.5px solid rgba(212, 175, 55, 0.45);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 20;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.18);
-  transition: all 0.25s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.14);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
 }
 
@@ -912,48 +920,86 @@ ul {
   background-color: var(--color-burgundy);
   color: #ffffff;
   border-color: var(--color-burgundy);
-  transform: translateY(-50%) scale(1.08);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 8px 24px rgba(56, 7, 13, 0.3);
 }
 
 .arrow-left {
-  left: 1.5rem;
+  left: 1.8rem;
 }
 
 .arrow-right {
-  right: 1.5rem;
+  right: 1.8rem;
 }
 
 /* Pagination Dots */
 .slider-pagination {
   position: absolute;
-  bottom: 1.2rem;
+  bottom: 1.4rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   align-items: center;
   gap: 0.6rem;
   z-index: 20;
-  background: rgba(0, 0, 0, 0.25);
-  padding: 5px 12px;
-  border-radius: 20px;
-  backdrop-filter: blur(4px);
+  background: rgba(43, 4, 10, 0.45);
+  padding: 6px 14px;
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 175, 55, 0.3);
 }
 
 .slider-pagination .dot {
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.65);
+  background-color: rgba(255, 255, 255, 0.55);
   border: none;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
   padding: 0;
 }
 
+.slider-pagination .dot:hover {
+  background-color: #ffffff;
+}
+
 .slider-pagination .dot.active {
   background-color: #d4af37;
-  width: 24px;
+  width: 26px;
   border-radius: 6px;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1200px) {
+  .hero-slides-wrapper {
+    max-height: 500px;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-slides-wrapper {
+    max-height: 440px;
+  }
+  
+  .slider-arrow {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .arrow-left {
+    left: 1rem;
+  }
+  
+  .arrow-right {
+    right: 1rem;
+  }
+
+  .slider-pagination {
+    bottom: 1rem;
+    padding: 5px 12px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -961,6 +1007,11 @@ ul {
     height: auto !important;
     min-height: unset !important;
     max-height: unset !important;
+    background-color: transparent;
+  }
+
+  .hero-slider-inner {
+    max-width: 100%;
   }
 
   .hero-slides-wrapper {
@@ -975,11 +1026,11 @@ ul {
   }
   
   .arrow-left {
-    left: 0.6rem;
+    left: 0.5rem;
   }
   
   .arrow-right {
-    right: 0.6rem;
+    right: 0.5rem;
   }
 
   .slider-pagination {
