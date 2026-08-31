@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Collections - Shree Raja Ram Bangles</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="Shree Raja Ram Bangles">
+        <img src="images/logo.jpg" alt="Shree Raja Ram Bangles Logo" class="header-logo-img">
+      </a>
+
+      <!-- Navigation Menu -->
+      <nav class="main-nav" id="mainNav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">HOME</a>
+          </li>
+          <li class="nav-item active">
+            <a href="collections.html" class="nav-link">COLLECTIONS</a>
+          </li>
+          <li class="nav-item">
+            <a href="shop.html" class="nav-link">ALL PRODUCTS</a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html#about" class="nav-link">ABOUT US</a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html#contact" class="nav-link">CONTACT</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <button class="action-btn search-btn" id="searchToggle" aria-label="Search">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-wrap">
+      <div class="search-bar-inner">
+        <input type="text" id="searchInput" placeholder="Search royal collections, kundan, meenakari bangles...">
+        <button id="searchSubmitBtn" aria-label="Submit search">
+          <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+      </div>
+      <button class="search-close" id="searchClose">&times;</button>
+    </div>
+  </div>
+
+  <!-- Main Collections Content Area -->
+  <main class="collections-page-wrapper">
+    
+    <!-- Title & Sort Bar -->
+    <div class="collections-page-header">
+      <div class="collections-title-block">
+        <h1 class="collections-main-title">All Collections</h1>
+        <div class="collections-ornament-line">
+          <span class="orn-line"></span>
+          <span class="orn-diamond"></span>
+          <span class="orn-line"></span>
+        </div>
+      </div>
+
+      <div class="collections-sort-block">
+        <span class="sort-label">Sort by:</span>
+        <div class="sort-select-wrapper">
+          <select class="collections-sort-select" aria-label="Sort Collections">
+            <option value="popular">Popular</option>
+            <option value="az">Alphabetical: A-Z</option>
+            <option value="za">Alphabetical: Z-A</option>
+            <option value="count-high">Most Products</option>
+            <option value="newest">Newest First</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8 Collections Grid -->
+    <div class="collections-page-grid">
+      
+      <!-- Card 1: Traditional Bangles -->
+      <a href="shop.html" class="collection-item-card">
+        <div class="collection-card-img-wrap">
+          <img src="images/col_traditional.jpg" alt="Traditional Bangles" loading="lazy">
+        </div>
+        <div class="collection-card-info">
+          <h3 class="collection-card-name">Traditional Bangles</h3>
+          <p class="collection-card-count">120+ Products</p>
+          <span class="collection-card-cta">EXPLORE COLLECTION &rarr;</span>
+        </div>
+      </a>
+
+      <!-- Card 2: Bridal Bangles -->
+      <a href="shop.html" class="collection-item-card">
+        <div class="collection-card-img-wrap">
+          <img src="images/col_bridal.jpg" alt="Bridal Bangles" loading="lazy">
+        </div>
+        <div class="collection-card-info">
+          <h3 class="collection-card-name">Bridal Bangles</h3>
+          <p class="collection-card-count">95+ Products</p>
+          <span class="collection-card-cta">EXPLORE COLLECTION &rarr;</span>
+        </div>
+      </a>
+
+      <!-- Card 3: Kundan Bangles -->
+      <a href="shop.html" class="collection-item-card">
+        <div class="collection-card-img-wrap">
+          <img src="images/col_kundan.jpg" alt="Kundan Bangles" loading="lazy">
+        </div>
+        <div class="collection-card-info">
+          <h3 class="collection-card-name">Kundan Bangles</h3>
+          <p class="collection-card-count">80+ Products</p>
+          <span class="collection-card-cta">EXPLORE COLLECTION &rarr;</span>
+        </div>
+      </a>
+
+      <!-- Card 4: Meenakari Bangles -->
+      <a href="shop.html" class="collection-item-card">
+        <div class="collection-card-img-wrap">
+          <img src="images/traditional.jpg" alt="Meenakari Bangles" loading="lazy">
+        </div>
+        <div class="collection-card-info">
+          <h3 class="collection-card-name">Meenakari Bangles</h3>
+          <p class="collection-card-count">70+ Products</p>
+          <span class="collection-card-cta">EXPLORE COLLECTION &rarr;</span>
+        </div>
+      </a>
+
+      <!-- Card 5: Stone Bangles -->
+      <a href="shop.html" class="collection-item-card">
+        <div class="collection-card-img-wrap">
+          <img src="images/bridal.jpg" alt="Stone Bangles" loading="lazy">
+        </div>
+        <div class="collection-card-info">
+          <h3 class="collection-card-name">Stone Bangles</h3>
+          <p class="collection-card-count">60+ Products</p>
+          <span class="collection-card-cta">EXPLORE COLLECTION &rarr;</span>
+        </div>
+      </a>
+
+      <!-- Card 6: Lac Bangles -->
+      <a href="shop.html" class="collection-item-card">
+        <div class="collection-card-img-wrap">
+          <img src="images/kundan.jpg" alt="Lac Bangles" loading="lazy">
+        </div>
+        <div class="collection-card-info">
+          <h3 class="collection-card-name">Lac Bangles</h3>
+          <p class="collection-card-count">50+ Products</p>
+          <span class="collection-card-cta">EXPLORE COLLECTION &rarr;</span>
+        </div>
+      </a>
+
+      <!-- Card 7: Kids Bangles -->
+      <a href="shop.html" class="collection-item-card">
+        <div class="collection-card-img-wrap">
+          <img src="images/bridal.jpg" alt="Kids Bangles" loading="lazy">
+        </div>
+        <div class="collection-card-info">
+          <h3 class="collection-card-name">Kids Bangles</h3>
+          <p class="collection-card-count">40+ Products</p>
+          <span class="collection-card-cta">EXPLORE COLLECTION &rarr;</span>
+        </div>
+      </a>
+
+      <!-- Card 8: Gold Plated Bangles -->
+      <a href="shop.html" class="collection-item-card">
+        <div class="collection-card-img-wrap">
+          <img src="images/col_traditional.jpg" alt="Gold Plated Bangles" loading="lazy">
+        </div>
+        <div class="collection-card-info">
+          <h3 class="collection-card-name">Gold Plated Bangles</h3>
+          <p class="collection-card-count">100+ Products</p>
+          <span class="collection-card-cta">EXPLORE COLLECTION &rarr;</span>
+        </div>
+      </a>
+
+    </div>
+
+  </main>
+
+  <!-- Complete Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+
+        <!-- Column 1: Brand & Bio -->
+        <div class="footer-col footer-brand-col">
+          <a href="index.html" class="footer-logo-link">
+            <img src="images/logo.jpg" alt="Shree Raja Ram Bangles Logo" class="footer-logo-img">
+          </a>
+          <p class="footer-bio-text">
+            Elegant bangles for every occasion. Crafted to sparkle for you.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://instagram.com" class="social-circle" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://facebook.com" class="social-circle" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="https://youtube.com" class="social-circle" target="_blank" rel="noopener" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#ffffff"></polygon>
+              </svg>
+            </a>
+            <a href="https://twitter.com" class="social-circle" target="_blank" rel="noopener" aria-label="Twitter">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">QUICK LINKS</h4>
+          <ul class="footer-link-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="collections.html">Collections</a></li>
+            <li><a href="shop.html">All Products</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Customer Service -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">CUSTOMER SERVICE</h4>
+          <ul class="footer-link-list">
+            <li><a href="shop.html">Track Order</a></li>
+            <li><a href="shop.html">Returns</a></li>
+            <li><a href="shop.html">Shipping Policy</a></li>
+            <li><a href="shop.html">Cancellation</a></li>
+            <li><a href="shop.html">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Information -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">INFORMATION</h4>
+          <ul class="footer-link-list">
+            <li><a href="shop.html">Privacy Policy</a></li>
+            <li><a href="shop.html">Terms & Conditions</a></li>
+            <li><a href="shop.html">Refund Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 5: Newsletter -->
+        <div class="footer-col footer-newsletter-col">
+          <h4 class="footer-col-title">NEWSLETTER</h4>
+          <p class="footer-newsletter-sub">
+            Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.
+          </p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Shree Raja Ram Bangles!');">
+            <input type="email" placeholder="Enter your email" required class="footer-input">
+            <button type="submit" class="footer-submit-btn">SUBSCRIBE</button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div class="footer-copyright">
+          &copy; 2026 Shree Raja Ram Bangles. All Rights Reserved.
+        </div>
+        <div class="footer-payment-icons">
+          <span class="pay-badge">VISA</span>
+          <span class="pay-badge">MASTERCARD</span>
+          <span class="pay-badge">UPI</span>
+          <span class="pay-badge">GPAY</span>
+          <span class="pay-badge">PAYTM</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Floating WhatsApp Action -->
+    <a href="https://wa.me/919999999999" class="floating-whatsapp" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff">
+        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.587 1.871.884 2.796.885 3.183 0 5.769-2.587 5.77-5.767 0-3.182-2.587-5.771-5.77-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.075-2.072-.49-1.611-.663-2.614-2.316-2.695-2.424-.079-.108-.646-.86-.646-1.638 0-.779.408-1.162.553-1.32.145-.158.318-.198.423-.198.106 0 .212.002.304.007.098.005.228-.037.356.27.133.318.455 1.11.495 1.192.04.082.066.178.013.285-.053.107-.079.174-.158.267-.08.093-.169.208-.242.279-.082.08-.168.167-.072.332.096.165.427.705.916 1.14 1.258 1.119 1.542 1.264 1.761 1.355.219.091.348.078.477-.07.129-.148.554-.645.703-.866.149-.221.297-.184.498-.11.201.074 1.277.602 1.498.712.221.11.369.165.423.257.054.093.054.538-.09 1.043z"/>
+      </svg>
+    </a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

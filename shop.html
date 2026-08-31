@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Bangles - Shree Raja Ram Bangles Catalog</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="Shree Raja Ram Bangles">
+        <img src="images/logo.jpg" alt="Shree Raja Ram Bangles Logo" class="header-logo-img">
+      </a>
+
+      <!-- Navigation Menu -->
+      <nav class="main-nav" id="mainNav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a href="collections.html" class="nav-link">COLLECTIONS</a>
+          </li>
+          <li class="nav-item active">
+            <a href="shop.html" class="nav-link">ALL PRODUCTS</a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html#about" class="nav-link">ABOUT US</a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html#contact" class="nav-link">CONTACT</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <button class="action-btn search-btn" id="searchToggle" aria-label="Search">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <img src="images/logo.jpg" alt="Shree Raja Ram Bangles Logo" class="brand-logo" style="height: 38px;">
+      <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li class="mobile-nav-item"><a href="index.html">HOME</a></li>
+      <li class="mobile-nav-item"><a href="collections.html">COLLECTIONS</a></li>
+      <li class="mobile-nav-item active"><a href="shop.html">ALL PRODUCTS</a></li>
+      <li class="mobile-nav-item"><a href="index.html#about">ABOUT US</a></li>
+      <li class="mobile-nav-item"><a href="index.html#contact">CONTACT</a></li>
+    </ul>
+  </aside>
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-wrap">
+      <div class="search-bar-inner">
+        <input type="text" id="searchInput" placeholder="Search royal bangles, bridal kundan, meenakari...">
+        <button id="searchSubmitBtn" aria-label="Submit search">
+          <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+      </div>
+      <button class="search-close" id="searchClose">&times;</button>
+    </div>
+  </div>
+
+  <!-- Main Shop / Catalog Page Wrapper -->
+  <main class="shop-page-wrapper">
+    
+    <!-- Desktop Header -->
+    <div class="shop-top-header">
+      <div class="shop-header-left">
+        <h1 class="shop-main-title">All Bangles</h1>
+        <span class="shop-result-count-desktop" id="desktopResultCount">Showing 1–24 of 240 products</span>
+      </div>
+
+      <div class="shop-sort-desktop">
+        <span class="shop-sort-label">Sort by:</span>
+        <select class="shop-sort-select" id="desktopSortSelect" aria-label="Sort products">
+          <option value="popular">Popular</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+          <option value="newest">Newest First</option>
+          <option value="rating">Customer Rating</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Desktop Category Filter Pills -->
+    <div class="shop-category-pills-bar" id="desktopCategoryPills">
+      <button class="category-pill-btn active" data-category="all">All Bangles</button>
+      <button class="category-pill-btn" data-category="traditional">Traditional</button>
+      <button class="category-pill-btn" data-category="bridal">Bridal</button>
+      <button class="category-pill-btn" data-category="kundan">Kundan</button>
+      <button class="category-pill-btn" data-category="meenakari">Meenakari</button>
+      <button class="category-pill-btn" data-category="stone">Stone</button>
+      <button class="category-pill-btn" data-category="lac">Lac</button>
+      <button class="category-pill-btn" data-category="kids">Kids</button>
+      <button class="category-pill-btn" data-category="gold-plated">Gold Plated</button>
+    </div>
+
+    <!-- Mobile Top Action Bar -->
+    <div class="shop-mobile-action-bar">
+      <button class="shop-mobile-action-btn" id="mobileFilterBtn">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="4" y1="21" x2="4" y2="14"></line>
+          <line x1="4" y1="10" x2="4" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12" y2="3"></line>
+          <line x1="20" y1="21" x2="20" y2="16"></line>
+          <line x1="20" y1="12" x2="20" y2="3"></line>
+          <line x1="1" y1="14" x2="7" y2="14"></line>
+          <line x1="9" y1="8" x2="15" y2="8"></line>
+          <line x1="17" y1="16" x2="23" y2="16"></line>
+        </svg>
+        FILTER
+      </button>
+      <button class="shop-mobile-action-btn" id="mobileSortBtn">
+        SORT BY
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Circular Category Icons Carousel -->
+    <div class="shop-mobile-category-slider" id="mobileCategorySlider">
+      <div class="mobile-cat-item active" data-category="all">
+        <div class="mobile-cat-circle">
+          <img src="images/col_traditional.jpg" alt="All Bangles">
+        </div>
+        <span class="mobile-cat-name">All Bangles</span>
+      </div>
+      <div class="mobile-cat-item" data-category="traditional">
+        <div class="mobile-cat-circle">
+          <img src="images/col_traditional.jpg" alt="Traditional">
+        </div>
+        <span class="mobile-cat-name">Traditional</span>
+      </div>
+      <div class="mobile-cat-item" data-category="bridal">
+        <div class="mobile-cat-circle">
+          <img src="images/col_bridal.jpg" alt="Bridal">
+        </div>
+        <span class="mobile-cat-name">Bridal</span>
+      </div>
+      <div class="mobile-cat-item" data-category="kundan">
+        <div class="mobile-cat-circle">
+          <img src="images/col_kundan.jpg" alt="Kundan">
+        </div>
+        <span class="mobile-cat-name">Kundan</span>
+      </div>
+      <div class="mobile-cat-item" data-category="meenakari">
+        <div class="mobile-cat-circle">
+          <img src="images/traditional.jpg" alt="Meenakari">
+        </div>
+        <span class="mobile-cat-name">Meenakari</span>
+      </div>
+      <div class="mobile-cat-item" data-category="lac">
+        <div class="mobile-cat-circle">
+          <img src="images/kundan.jpg" alt="Lac">
+        </div>
+        <span class="mobile-cat-name">Lac</span>
+      </div>
+      <div class="mobile-cat-item" data-category="kids">
+        <div class="mobile-cat-circle">
+          <img src="images/bridal.jpg" alt="Kids">
+        </div>
+        <span class="mobile-cat-name">Kids</span>
+      </div>
+      <div class="mobile-cat-item" data-category="gold-plated">
+        <div class="mobile-cat-circle">
+          <img src="images/col_traditional.jpg" alt="Gold Plated">
+        </div>
+        <span class="mobile-cat-name">Gold Plated</span>
+      </div>
+    </div>
+
+    <!-- Mobile Result Count -->
+    <div class="shop-result-count-mobile" id="mobileResultCount">
+      Showing 1–24 of 240 products
+    </div>
+
+    <!-- 4-Column Desktop / 2-Column Mobile Product Cards Grid -->
+    <div class="shop-cards-grid" id="shopCardsGrid">
+      
+      <!-- Card 1: Kundan Bridal Bangles Set -->
+      <div class="shop-item-card" data-id="kundan-bridal-set" data-category="bridal">
+        <div class="shop-item-img-wrap">
+          <img src="images/col_traditional.jpg" alt="Kundan Bridal Bangles Set" loading="lazy">
+          <button class="shop-item-wishlist-btn" aria-label="Add to wishlist">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          </button>
+        </div>
+        <div class="shop-item-body">
+          <h3 class="shop-item-title">Kundan Bridal Bangles Set</h3>
+          <div class="shop-item-price-row">
+            <span class="shop-item-curr-price">₹1,499</span>
+            <span class="shop-item-orig-price">₹2,199</span>
+            <span class="shop-item-discount-pill">32% OFF</span>
+          </div>
+          <div class="shop-item-rating-row">
+            <span class="shop-item-stars">★★★★★</span>
+            <span class="shop-item-reviews-count">(128)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Pearl Bangles Set -->
+      <div class="shop-item-card" data-id="cultured-pearl-chooda" data-category="stone">
+        <div class="shop-item-img-wrap">
+          <img src="images/col_bridal.jpg" alt="Pearl Bangles Set" loading="lazy">
+          <button class="shop-item-wishlist-btn" aria-label="Add to wishlist">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          </button>
+        </div>
+        <div class="shop-item-body">
+          <h3 class="shop-item-title">Pearl Bangles Set</h3>
+          <div class="shop-item-price-row">
+            <span class="shop-item-curr-price">₹1,099</span>
+            <span class="shop-item-orig-price">₹1,799</span>
+            <span class="shop-item-discount-pill">39% OFF</span>
+          </div>
+          <div class="shop-item-rating-row">
+            <span class="shop-item-stars">★★★★★</span>
+            <span class="shop-item-reviews-count">(80)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Meenakari Bangles Set -->
+      <div class="shop-item-card" data-id="meenakari-handpainted" data-category="meenakari">
+        <div class="shop-item-img-wrap">
+          <img src="images/traditional.jpg" alt="Meenakari Bangles Set" loading="lazy">
+          <button class="shop-item-wishlist-btn" aria-label="Add to wishlist">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          </button>
+        </div>
+        <div class="shop-item-body">
+          <h3 class="shop-item-title">Meenakari Bangles Set</h3>
+          <div class="shop-item-price-row">
+            <span class="shop-item-curr-price">₹1,299</span>
+            <span class="shop-item-orig-price">₹1,999</span>
+            <span class="shop-item-discount-pill">35% OFF</span>
+          </div>
+          <div class="shop-item-rating-row">
+            <span class="shop-item-stars">★★★★★</span>
+            <span class="shop-item-reviews-count">(96)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: Gold Plated Bangles Set -->
+      <div class="shop-item-card" data-id="gold-plated-kada" data-category="gold-plated">
+        <div class="shop-item-img-wrap">
+          <img src="images/col_traditional.jpg" alt="Gold Plated Bangles Set" loading="lazy">
+          <button class="shop-item-wishlist-btn" aria-label="Add to wishlist">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          </button>
+        </div>
+        <div class="shop-item-body">
+          <h3 class="shop-item-title">Gold Plated Bangles Set</h3>
+          <div class="shop-item-price-row">
+            <span class="shop-item-curr-price">₹1,199</span>
+            <span class="shop-item-orig-price">₹1,899</span>
+            <span class="shop-item-discount-pill">37% OFF</span>
+          </div>
+          <div class="shop-item-rating-row">
+            <span class="shop-item-stars">★★★★★</span>
+            <span class="shop-item-reviews-count">(110)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5: Stone Bangles Set -->
+      <div class="shop-item-card" data-id="multi-stone-zircon" data-category="stone">
+        <div class="shop-item-img-wrap">
+          <img src="images/bridal.jpg" alt="Stone Bangles Set" loading="lazy">
+          <button class="shop-item-wishlist-btn" aria-label="Add to wishlist">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          </button>
+        </div>
+        <div class="shop-item-body">
+          <h3 class="shop-item-title">Stone Bangles Set</h3>
+          <div class="shop-item-price-row">
+            <span class="shop-item-curr-price">₹999</span>
+            <span class="shop-item-orig-price">₹1,599</span>
+            <span class="shop-item-discount-pill">38% OFF</span>
+          </div>
+          <div class="shop-item-rating-row">
+            <span class="shop-item-stars">★★★★★</span>
+            <span class="shop-item-reviews-count">(75)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6: Lac Bangles Set -->
+      <div class="shop-item-card" data-id="jaipuri-lac-bangles" data-category="lac">
+        <div class="shop-item-img-wrap">
+          <img src="images/kundan.jpg" alt="Lac Bangles Set" loading="lazy">
+          <button class="shop-item-wishlist-btn" aria-label="Add to wishlist">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          </button>
+        </div>
+        <div class="shop-item-body">
+          <h3 class="shop-item-title">Lac Bangles Set</h3>
+          <div class="shop-item-price-row">
+            <span class="shop-item-curr-price">₹899</span>
+            <span class="shop-item-orig-price">₹1,499</span>
+            <span class="shop-item-discount-pill">40% OFF</span>
+          </div>
+          <div class="shop-item-rating-row">
+            <span class="shop-item-stars">★★★★★</span>
+            <span class="shop-item-reviews-count">(62)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 7: Kundan Bangles Set -->
+      <div class="shop-item-card" data-id="twin-layered-kundan" data-category="kundan">
+        <div class="shop-item-img-wrap">
+          <img src="images/col_kundan.jpg" alt="Kundan Bangles Set" loading="lazy">
+          <button class="shop-item-wishlist-btn" aria-label="Add to wishlist">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          </button>
+        </div>
+        <div class="shop-item-body">
+          <h3 class="shop-item-title">Kundan Bangles Set</h3>
+          <div class="shop-item-price-row">
+            <span class="shop-item-curr-price">₹1,399</span>
+            <span class="shop-item-orig-price">₹2,199</span>
+            <span class="shop-item-discount-pill">36% OFF</span>
+          </div>
+          <div class="shop-item-rating-row">
+            <span class="shop-item-stars">★★★★★</span>
+            <span class="shop-item-reviews-count">(140)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 8: Kids Bangles Set -->
+      <div class="shop-item-card" data-id="kids-floral-enamel" data-category="kids">
+        <div class="shop-item-img-wrap">
+          <img src="images/bridal.jpg" alt="Kids Bangles Set" loading="lazy">
+          <button class="shop-item-wishlist-btn" aria-label="Add to wishlist">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          </button>
+        </div>
+        <div class="shop-item-body">
+          <h3 class="shop-item-title">Kids Bangles Set</h3>
+          <div class="shop-item-price-row">
+            <span class="shop-item-curr-price">₹799</span>
+            <span class="shop-item-orig-price">₹1,299</span>
+            <span class="shop-item-discount-pill">39% OFF</span>
+          </div>
+          <div class="shop-item-rating-row">
+            <span class="shop-item-stars">★★★★★</span>
+            <span class="shop-item-reviews-count">(54)</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Pagination -->
+    <nav class="catalog-pagination" aria-label="Catalog pages">
+      <a href="#" class="page-link" aria-label="Previous">&lt;</a>
+      <a href="#" class="page-link active">1</a>
+      <a href="#" class="page-link">2</a>
+      <a href="#" class="page-link">3</a>
+      <span class="page-link" style="border:none; cursor:default;">...</span>
+      <a href="#" class="page-link">8</a>
+      <a href="#" class="page-link" aria-label="Next">&gt;</a>
+    </nav>
+
+  </main>
+
+  <!-- Complete Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+
+        <!-- Column 1: Brand & Bio -->
+        <div class="footer-col footer-brand-col">
+          <a href="index.html" class="footer-logo-link">
+            <img src="images/logo.jpg" alt="Shree Raja Ram Bangles Logo" class="footer-logo-img">
+          </a>
+          <p class="footer-bio-text">
+            Elegant bangles for every occasion. Crafted to sparkle for you.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://instagram.com" class="social-circle" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://facebook.com" class="social-circle" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="https://youtube.com" class="social-circle" target="_blank" rel="noopener" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#ffffff"></polygon>
+              </svg>
+            </a>
+            <a href="https://twitter.com" class="social-circle" target="_blank" rel="noopener" aria-label="Twitter">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-col">
+          <h4 class="footer-heading">QUICK LINKS</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="collections.html">Collections</a></li>
+            <li><a href="shop.html">All Products</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Customer Service -->
+        <div class="footer-col">
+          <h4 class="footer-heading">CUSTOMER SERVICE</h4>
+          <ul class="footer-links-list">
+            <li><a href="#">Track Order</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Shipping Policy</a></li>
+            <li><a href="#">Cancellation</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Information -->
+        <div class="footer-col">
+          <h4 class="footer-heading">INFORMATION</h4>
+          <ul class="footer-links-list">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Refund Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 5: Newsletter -->
+        <div class="footer-col newsletter-col">
+          <h4 class="footer-heading">NEWSLETTER</h4>
+          <p class="newsletter-desc">
+            Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.
+          </p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+            <input type="email" placeholder="Enter your email" required class="newsletter-input">
+            <button type="submit" class="newsletter-submit-btn" aria-label="Subscribe">&gt;</button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div class="footer-copyright">
+          &copy; 2026 Shree Raja Ram Bangles. All Rights Reserved.
+        </div>
+        <div class="footer-payment-icons">
+          <span class="pay-badge">VISA</span>
+          <span class="pay-badge">MASTERCARD</span>
+          <span class="pay-badge">UPI</span>
+          <span class="pay-badge">GPAY</span>
+          <span class="pay-badge">PAYTM</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Floating WhatsApp Action -->
+    <a href="https://wa.me/919999999999" class="floating-whatsapp" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff">
+        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.587 1.871.884 2.796.885 3.183 0 5.769-2.587 5.77-5.767 0-3.182-2.587-5.771-5.77-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.698.075-2.072-.49-1.611-.663-2.614-2.316-2.695-2.424-.079-.108-.646-.86-.646-1.638 0-.779.408-1.162.553-1.32.145-.158.318-.198.423-.198.106 0 .212.002.304.007.098.005.228-.037.356.27.133.318.455 1.11.495 1.192.04.082.066.178.013.285-.053.107-.079.174-.158.267-.08.093-.169.208-.242.279-.082.08-.168.167-.072.332.096.165.427.705.916 1.14 1.258 1.119 1.542 1.264 1.761 1.355.219.091.348.078.477-.07.129-.148.554-.645.703-.866.149-.221.297-.184.498-.11.201.074 1.277.602 1.498.712.221.11.369.165.423.257.054.093.054.538-.09 1.043z"/>
+      </svg>
+    </a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
