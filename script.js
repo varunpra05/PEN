@@ -68,60 +68,84 @@ document.addEventListener('DOMContentLoaded', () => {
      2. Mobile Drawer & Accordion Submenus
      -------------------------------------------------------------------------- */
   function openMobileDrawer() {
-    mobileDrawer.classList.add('active');
-    drawerOverlay.classList.add('active');
+    const drawer = document.getElementById('mobileDrawer');
+    const overlay = document.getElementById('drawerOverlay') || document.getElementById('drawerBackdrop');
+    if (drawer) drawer.classList.add('active');
+    if (overlay) overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
 
   function closeMobileDrawer() {
-    mobileDrawer.classList.remove('active');
-    drawerOverlay.classList.remove('active');
+    const drawer = document.getElementById('mobileDrawer');
+    const overlay = document.getElementById('drawerOverlay') || document.getElementById('drawerBackdrop');
+    if (drawer) drawer.classList.remove('active');
+    if (overlay) overlay.classList.remove('active');
     document.body.style.overflow = '';
   }
 
-  if (mobileToggle) mobileToggle.addEventListener('click', openMobileDrawer);
-  if (drawerClose) drawerClose.addEventListener('click', closeMobileDrawer);
-  if (drawerOverlay) drawerOverlay.addEventListener('click', closeMobileDrawer);
+  // Event Delegation for Mobile Drawer & Overlay
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('#mobileToggle') || e.target.closest('.mobile-toggle')) {
+      e.preventDefault();
+      openMobileDrawer();
+    } else if (e.target.closest('#drawerClose') || e.target.closest('.drawer-close') || e.target.closest('#drawerOverlay') || e.target.closest('#drawerBackdrop') || e.target.closest('.mobile-drawer-overlay')) {
+      closeMobileDrawer();
+    }
+  });
 
   // Accordion submenus inside drawer
-  accordionTriggers.forEach(trigger => {
-    trigger.addEventListener('click', () => {
+  document.addEventListener('click', (e) => {
+    const trigger = e.target.closest('.accordion-trigger');
+    if (trigger) {
       const parentItem = trigger.parentElement;
       const isOpen = parentItem.classList.contains('open');
 
-      // Close all accordions
       document.querySelectorAll('.mobile-nav-item.has-accordion').forEach(item => {
         item.classList.remove('open');
       });
 
-      // Toggle clicked item
       if (!isOpen) {
         parentItem.classList.add('open');
       }
-    });
+    }
   });
 
   /* --------------------------------------------------------------------------
      3. Search Overlay
      -------------------------------------------------------------------------- */
   function openSearch() {
-    searchOverlay.classList.add('active');
-    setTimeout(() => {
-      if (searchInput) searchInput.focus();
-    }, 200);
+    const searchOverlayEl = document.getElementById('searchOverlay');
+    const searchInputEl = document.getElementById('searchInput') || document.getElementById('mobileSearchInput');
+    if (searchOverlayEl) {
+      searchOverlayEl.classList.add('active');
+      setTimeout(() => {
+        if (searchInputEl) searchInputEl.focus();
+      }, 200);
+    }
   }
 
   function closeSearch() {
-    searchOverlay.classList.remove('active');
+    const searchOverlayEl = document.getElementById('searchOverlay');
+    if (searchOverlayEl) {
+      searchOverlayEl.classList.remove('active');
+    }
   }
 
-  if (searchToggle) searchToggle.addEventListener('click', openSearch);
-  if (searchClose) searchClose.addEventListener('click', closeSearch);
-
-  // Close search overlay with Escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && searchOverlay.classList.contains('active')) {
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('#searchToggle') || e.target.closest('.search-btn')) {
+      e.preventDefault();
+      openSearch();
+    } else if (e.target.closest('#searchClose') || e.target.closest('.search-close')) {
+      e.preventDefault();
       closeSearch();
+    }
+  });
+
+  // Close search overlay and drawer with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeSearch();
+      closeMobileDrawer();
     }
   });
 
