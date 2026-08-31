@@ -213,35 +213,44 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* --------------------------------------------------------------------------
-     5. Hero Slider Logic
+     5. Hero Banner Slider Logic (Smooth Multi-Slide Carousel)
      -------------------------------------------------------------------------- */
+  const heroSliderEl = document.getElementById('heroSlider');
+  const allSlides = document.querySelectorAll('.hero-slide');
+  const allDots = document.querySelectorAll('.slider-pagination .dot');
+
   function goToSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.toggle('active', i === index);
+    if (!allSlides.length) return;
+    const targetIndex = (index + allSlides.length) % allSlides.length;
+    allSlides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === targetIndex);
     });
-    dots.forEach((dot, i) => {
-      dot.classList.toggle('active', i === index);
+    allDots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === targetIndex);
     });
-    currentSlideIndex = index;
+    currentSlideIndex = targetIndex;
   }
 
   function nextSlide() {
-    const newIndex = (currentSlideIndex + 1) % slides.length;
-    goToSlide(newIndex);
+    goToSlide(currentSlideIndex + 1);
   }
 
   function prevSlide() {
-    const newIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
-    goToSlide(newIndex);
+    goToSlide(currentSlideIndex - 1);
   }
 
   function startAutoSlide() {
     stopAutoSlide();
-    slideInterval = setInterval(nextSlide, 6000);
+    if (allSlides.length > 1) {
+      slideInterval = setInterval(nextSlide, 5000);
+    }
   }
 
   function stopAutoSlide() {
-    if (slideInterval) clearInterval(slideInterval);
+    if (slideInterval) {
+      clearInterval(slideInterval);
+      slideInterval = null;
+    }
   }
 
   if (nextSlideBtn) {
@@ -258,13 +267,43 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  dots.forEach(dot => {
+  allDots.forEach(dot => {
     dot.addEventListener('click', (e) => {
-      const index = parseInt(e.target.dataset.index);
+      const index = parseInt(e.target.dataset.index, 10);
       goToSlide(index);
       startAutoSlide();
     });
   });
+
+  // Pause on hover
+  if (heroSliderEl) {
+    heroSliderEl.addEventListener('mouseenter', stopAutoSlide);
+    heroSliderEl.addEventListener('mouseleave', startAutoSlide);
+
+    // Touch Swipe Support for Mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    heroSliderEl.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+      stopAutoSlide();
+    }, { passive: true });
+
+    heroSliderEl.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+      startAutoSlide();
+    }, { passive: true });
+
+    function handleSwipe() {
+      const threshold = 40;
+      if (touchEndX < touchStartX - threshold) {
+        nextSlide();
+      } else if (touchEndX > touchStartX + threshold) {
+        prevSlide();
+      }
+    }
+  }
 
   // Start initial auto slider
   startAutoSlide();
