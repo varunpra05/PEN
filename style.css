@@ -837,16 +837,17 @@ ul {
   position: relative;
   width: 100%;
   overflow: hidden;
-  background-color: #2b1d19;
   user-select: none;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
 }
 
 .hero-slides-wrapper {
   position: relative;
   width: 100%;
   aspect-ratio: 2 / 1;
-  max-height: 620px;
-  min-height: 200px;
+  overflow: hidden;
 }
 
 .hero-slide {
@@ -953,9 +954,16 @@ ul {
 }
 
 @media (max-width: 768px) {
+  .hero-slider {
+    height: auto !important;
+    min-height: unset !important;
+    max-height: unset !important;
+  }
+
   .hero-slides-wrapper {
     aspect-ratio: 2 / 1;
-    min-height: 180px;
+    min-height: unset !important;
+    max-height: unset !important;
   }
   
   .slider-arrow {
@@ -972,7 +980,7 @@ ul {
   }
 
   .slider-pagination {
-    bottom: 0.6rem;
+    bottom: 0.5rem;
     padding: 3px 8px;
     gap: 0.4rem;
   }
@@ -1069,9 +1077,9 @@ ul {
     padding: 0 1rem;
   }
   .hero-slider {
-    height: 44vh;
-    min-height: 320px;
-    max-height: 400px;
+    height: auto !important;
+    min-height: unset !important;
+    max-height: unset !important;
   }
   .header-actions {
     gap: 0.4rem;
