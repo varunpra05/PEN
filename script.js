@@ -38,8 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Hero Slider Elements
   const slides = document.querySelectorAll('.hero-slide');
   const dots = document.querySelectorAll('.slider-pagination .dot');
-  const prevSlideBtn = document.getElementById('prevSlide');
-  const nextSlideBtn = document.getElementById('nextSlide');
 
   // State Management
   let currentSlideIndex = 0;
@@ -237,22 +235,30 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* --------------------------------------------------------------------------
-     5. Hero Banner Slider Logic (Smooth Multi-Slide Carousel)
+     5. Hero Banner Slider Logic (Smooth Auto-Scroll, Mouse Drag & Touch Swipe)
      -------------------------------------------------------------------------- */
   const heroSliderEl = document.getElementById('heroSlider');
+  const slidesWrapper = document.querySelector('.hero-slides-wrapper');
   const allSlides = document.querySelectorAll('.hero-slide');
   const allDots = document.querySelectorAll('.slider-pagination .dot');
 
-  function goToSlide(index) {
+  function goToSlide(index, withTransition = true) {
     if (!allSlides.length) return;
-    const targetIndex = (index + allSlides.length) % allSlides.length;
+    const total = allSlides.length;
+    currentSlideIndex = ((index % total) + total) % total;
+
+    if (slidesWrapper) {
+      slidesWrapper.style.transition = withTransition ? 'transform 0.55s cubic-bezier(0.25, 1, 0.5, 1)' : 'none';
+      slidesWrapper.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+    }
+
     allSlides.forEach((slide, i) => {
-      slide.classList.toggle('active', i === targetIndex);
+      slide.classList.toggle('active', i === currentSlideIndex);
     });
+
     allDots.forEach((dot, i) => {
-      dot.classList.toggle('active', i === targetIndex);
+      dot.classList.toggle('active', i === currentSlideIndex);
     });
-    currentSlideIndex = targetIndex;
   }
 
   function nextSlide() {
@@ -266,7 +272,11 @@ document.addEventListener('DOMContentLoaded', () => {
   function startAutoSlide() {
     stopAutoSlide();
     if (allSlides.length > 1) {
-      slideInterval = setInterval(nextSlide, 5000);
+      slideInterval = setInterval(() => {
+        if (!isDragging) {
+          nextSlide();
+        }
+      }, 4500);
     }
   }
 
@@ -277,59 +287,145 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  if (nextSlideBtn) {
-    nextSlideBtn.addEventListener('click', () => {
-      nextSlide();
-      startAutoSlide();
-    });
-  }
-
-  if (prevSlideBtn) {
-    prevSlideBtn.addEventListener('click', () => {
-      prevSlide();
-      startAutoSlide();
-    });
-  }
-
+  // Dots click support
   allDots.forEach(dot => {
     dot.addEventListener('click', (e) => {
+      e.stopPropagation();
       const index = parseInt(e.target.dataset.index, 10);
       goToSlide(index);
       startAutoSlide();
     });
   });
 
-  // Pause on hover
-  if (heroSliderEl) {
-    heroSliderEl.addEventListener('mouseenter', stopAutoSlide);
-    heroSliderEl.addEventListener('mouseleave', startAutoSlide);
+  // Mouse Drag (Desktop) & Touch Swipe (Mobile/Tablet) Controller
+  let isDragging = false;
+  let startPosX = 0;
+  let startPosY = 0;
+  let diffX = 0;
+  let diffY = 0;
+  let dragMoved = false;
+  let isHorizontalSwipe = false;
+  let isTouchActive = false;
 
-    // Touch Swipe Support for Mobile
-    let touchStartX = 0;
-    let touchEndX = 0;
+  if (heroSliderEl && slidesWrapper && allSlides.length > 0) {
+    // Initial position
+    goToSlide(0, false);
 
-    heroSliderEl.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
+    function getPositionX(e) {
+      return e.type.includes('mouse') ? e.pageX : (e.touches && e.touches[0] ? e.touches[0].clientX : (e.changedTouches && e.changedTouches[0] ? e.changedTouches[0].clientX : 0));
+    }
+
+    function getPositionY(e) {
+      return e.type.includes('mouse') ? e.pageY : (e.touches && e.touches[0] ? e.touches[0].clientY : (e.changedTouches && e.changedTouches[0] ? e.changedTouches[0].clientY : 0));
+    }
+
+    function dragStart(e) {
+      if (e.type === 'mousedown' && e.button !== 0) return; // Only primary mouse button
+      isDragging = true;
+      dragMoved = false;
+      isHorizontalSwipe = false;
+      isTouchActive = e.type.startsWith('touch');
       stopAutoSlide();
-    }, { passive: true });
 
-    heroSliderEl.addEventListener('touchend', (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      handleSwipe();
-      startAutoSlide();
-    }, { passive: true });
+      startPosX = getPositionX(e);
+      startPosY = getPositionY(e);
+      diffX = 0;
+      diffY = 0;
 
-    function handleSwipe() {
-      const threshold = 40;
-      if (touchEndX < touchStartX - threshold) {
-        nextSlide();
-      } else if (touchEndX > touchStartX + threshold) {
-        prevSlide();
+      slidesWrapper.style.transition = 'none';
+      if (!isTouchActive) {
+        heroSliderEl.classList.add('is-dragging');
       }
     }
+
+    function dragMove(e) {
+      if (!isDragging) return;
+
+      const currentX = getPositionX(e);
+      const currentY = getPositionY(e);
+
+      diffX = currentX - startPosX;
+      diffY = currentY - startPosY;
+
+      if (!dragMoved) {
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 6) {
+          isHorizontalSwipe = true;
+          dragMoved = true;
+        } else if (Math.abs(diffY) > Math.abs(diffX) && Math.abs(diffY) > 6 && isTouchActive) {
+          // Allow normal vertical page scrolling on mobile
+          isDragging = false;
+          slidesWrapper.style.transition = 'transform 0.55s cubic-bezier(0.25, 1, 0.5, 1)';
+          slidesWrapper.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+          startAutoSlide();
+          return;
+        }
+      }
+
+      if (isHorizontalSwipe || !isTouchActive) {
+        if (e.cancelable && isTouchActive) e.preventDefault();
+        dragMoved = true;
+        const sliderWidth = heroSliderEl.offsetWidth || 1;
+        const percentMoved = (diffX / sliderWidth) * 100;
+        const currentPosPercent = -currentSlideIndex * 100 + percentMoved;
+        slidesWrapper.style.transform = `translateX(${currentPosPercent}%)`;
+      }
+    }
+
+    function dragEnd(e) {
+      if (!isDragging) return;
+      isDragging = false;
+      heroSliderEl.classList.remove('is-dragging');
+
+      const sliderWidth = heroSliderEl.offsetWidth || 1;
+      const threshold = Math.min(60, sliderWidth * 0.15);
+
+      if (dragMoved && Math.abs(diffX) > threshold) {
+        if (diffX < 0) {
+          goToSlide(currentSlideIndex + 1);
+        } else {
+          goToSlide(currentSlideIndex - 1);
+        }
+      } else {
+        // Snap back to active slide smoothly
+        goToSlide(currentSlideIndex);
+      }
+
+      startAutoSlide();
+    }
+
+    // Prevent accidental click navigation when dragging
+    const slideLinks = heroSliderEl.querySelectorAll('.hero-slide-link');
+    slideLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        if (dragMoved) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+      });
+      link.addEventListener('dragstart', (e) => e.preventDefault());
+    });
+
+    // Mobile / Touch listeners
+    heroSliderEl.addEventListener('touchstart', dragStart, { passive: true });
+    heroSliderEl.addEventListener('touchmove', dragMove, { passive: false });
+    heroSliderEl.addEventListener('touchend', dragEnd, { passive: true });
+    heroSliderEl.addEventListener('touchcancel', dragEnd, { passive: true });
+
+    // Desktop / Mouse listeners
+    heroSliderEl.addEventListener('mousedown', dragStart);
+    window.addEventListener('mousemove', dragMove);
+    window.addEventListener('mouseup', dragEnd);
+
+    // Pause on hover (Desktop)
+    heroSliderEl.addEventListener('mouseenter', () => {
+      if (!isDragging) stopAutoSlide();
+    });
+    heroSliderEl.addEventListener('mouseleave', () => {
+      if (!isDragging) startAutoSlide();
+    });
   }
 
-  // Start initial auto slider
+  // Start initial auto-slide
   startAutoSlide();
 
   /* --------------------------------------------------------------------------
@@ -513,28 +609,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Hero Slider Hover & Touch Gestures
-  const heroSliderWrap = document.getElementById('heroSlider');
-  if (heroSliderWrap) {
-    heroSliderWrap.addEventListener('mouseenter', stopAutoSlide);
-    heroSliderWrap.addEventListener('mouseleave', startAutoSlide);
 
-    let heroStartX = 0;
-    heroSliderWrap.addEventListener('touchstart', (e) => {
-      heroStartX = e.touches[0].clientX;
-      stopAutoSlide();
-    }, { passive: true });
-
-    heroSliderWrap.addEventListener('touchend', (e) => {
-      const heroEndX = e.changedTouches[0].clientX;
-      const heroDiffX = heroStartX - heroEndX;
-      if (Math.abs(heroDiffX) > 40) {
-        if (heroDiffX > 0) nextSlide();
-        else prevSlide();
-      }
-      startAutoSlide();
-    }, { passive: true });
-  }
 
   /* --------------------------------------------------------------------------
      7. Feature Banners Auto-Scrolling Carousel (Responsive Mobile/Tablet)

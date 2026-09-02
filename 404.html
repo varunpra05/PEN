@@ -6,25 +6,29 @@
   <title>Bangle Maison — Page Redirect</title>
   <script>
     (function() {
-      var path = window.location.pathname;
+      var fullPath = window.location.pathname;
       var hash = window.location.hash || '';
-      // If user visits /admin or /admin/
-      if (path.endsWith('/admin') || path.endsWith('/admin/')) {
-        window.location.replace('admin.html' + hash);
+      var search = window.location.search || '';
+      var cleanPath = fullPath.replace(/\/+$/, '');
+
+      // Check if visiting admin route
+      if (cleanPath.endsWith('/admin')) {
+        var base = cleanPath.slice(0, -6);
+        window.location.replace((base ? base : '') + '/admin/' + search + hash);
         return;
       }
-      if (path.includes('/admin/')) {
-        window.location.replace('../admin.html' + hash);
+
+      // Check if visiting /collections
+      if (cleanPath.endsWith('/collections')) {
+        var base = cleanPath.slice(0, -12);
+        window.location.replace((base ? base : '') + '/collections.html' + search + hash);
         return;
       }
-      // If user visits /collections
-      if (path.endsWith('/collections') || path.endsWith('/collections/')) {
-        window.location.replace('collections.html' + hash);
-        return;
-      }
-      // If user visits /shop
-      if (path.endsWith('/shop') || path.endsWith('/shop/')) {
-        window.location.replace('shop.html' + hash);
+
+      // Check if visiting /shop
+      if (cleanPath.endsWith('/shop')) {
+        var base = cleanPath.slice(0, -5);
+        window.location.replace((base ? base : '') + '/shop.html' + search + hash);
         return;
       }
     })();
