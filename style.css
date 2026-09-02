@@ -1202,12 +1202,29 @@ ul {
   margin-top: 0.1rem;
 }
 
-/* Collections Grid: 8-Column Layout on Desktop */
+/* Collections Intro Subtitle Header */
+.collections-intro-header {
+  text-align: center;
+  margin-bottom: 2.8rem;
+}
+
+.collections-intro-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.96rem;
+  line-height: 1.65;
+  color: #5c4a41;
+  max-width: 680px;
+  margin: 0 auto;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* Collections Grid: 4-Column Layout on Desktop */
 .collections-grid {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  gap: 1.4rem 0.6rem;
-  max-width: 1160px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3.2rem 2.2rem;
+  max-width: 1200px;
   margin: 0 auto;
   justify-items: center;
   align-items: start;
@@ -1222,20 +1239,29 @@ ul {
   cursor: pointer;
   outline: none;
   position: relative;
-  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Luxury Gold Halo Framed Circle Container */
+.collection-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Luxury Gold Rim Framed Circle Container */
 .circle-image-wrapper {
   position: relative;
-  width: 90px;
-  height: 90px;
+  width: 165px;
+  height: 165px;
   border-radius: 50%;
-  padding: 2.5px;
-  background: linear-gradient(135deg, #d4af37 0%, #ab7e42 35%, #fff7e6 65%, #c5a059 100%);
-  margin-bottom: 0.65rem;
-  box-shadow: 0 6px 18px rgba(171, 126, 66, 0.14), 0 2px 5px rgba(0, 0, 0, 0.05);
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  padding: 3px;
+  background: #ffffff;
+  border: 2.5px solid #d4af37;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.22), 0 8px 24px rgba(43, 4, 10, 0.08);
+  margin-bottom: 0.85rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .circle-image-wrapper img {
@@ -1243,87 +1269,67 @@ ul {
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  border: 2.5px solid #ffffff;
-  transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-/* Overlay view button on hover */
-.card-overlay {
-  position: absolute;
-  inset: 2.5px;
-  background: rgba(74, 14, 23, 0.52);
-  backdrop-filter: blur(2px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.35s ease;
-  border-radius: 50%;
-}
-
-.view-btn {
-  color: #ffffff;
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  padding: 0.35rem 0.75rem;
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  border-radius: var(--border-radius-pill);
-  transform: translateY(6px);
-  transition: transform 0.35s ease;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 /* Card Hover & Focus Enhancements */
 .collection-card:hover .circle-image-wrapper,
 .collection-card:focus-visible .circle-image-wrapper {
-  background: linear-gradient(135deg, #ffffff 0%, #c5a059 40%, #701d29 100%);
-  box-shadow: 0 12px 28px rgba(74, 14, 23, 0.24), 0 0 0 3px rgba(197, 160, 89, 0.4);
-  transform: translateY(-6px) scale(1.03);
+  border-color: #c5a059;
+  box-shadow: 0 0 0 5px rgba(212, 175, 55, 0.38), 0 12px 28px rgba(43, 4, 10, 0.16);
 }
 
 .collection-card:hover .circle-image-wrapper img,
 .collection-card:focus-visible .circle-image-wrapper img {
-  transform: scale(1.12);
+  transform: scale(1.08);
 }
 
-.collection-card:hover .card-overlay,
-.collection-card:focus-visible .card-overlay {
-  opacity: 1;
-}
-
-.collection-card:hover .view-btn,
-.collection-card:focus-visible .view-btn {
-  transform: translateY(0);
-}
-
-/* Enhanced Typography */
+/* Enhanced Typography & Flourish */
 .collection-label {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .category-name {
-  font-family: var(--font-sans);
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--color-text-primary);
-  margin-bottom: 0.12rem;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.18rem;
+  font-weight: 600;
+  color: #2b040a;
+  margin-bottom: 0.35rem;
   letter-spacing: 0.01em;
-  transition: color 0.3s ease;
-}
-
-.category-type {
-  font-family: var(--font-serif);
-  font-size: 0.72rem;
-  color: var(--color-gold);
-  font-style: italic;
-  font-weight: 500;
-  display: block;
-  letter-spacing: 0.03em;
+  transition: color 0.25s ease;
 }
 
 .collection-card:hover .category-name,
 .collection-card:focus-visible .category-name {
-  color: var(--color-burgundy);
+  color: #ab7e42;
+}
+
+/* Ornamental Flourish Underneath Category Name */
+.col-flourish {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  user-select: none;
+  opacity: 0.85;
+}
+
+.flourish-line {
+  width: 22px;
+  height: 1px;
+  background: #c5a059;
+  display: inline-block;
+}
+
+.flourish-diamond {
+  color: #ab7e42;
+  font-size: 7px;
+  line-height: 1;
+  display: inline-block;
 }
 
 /* Responsive 4-Column Layout on Mobile */
@@ -1515,110 +1521,92 @@ ul {
 }
 
 /* --------------------------------------------------------------------------
-   11. Responsive Breakpoints (Tablet & Mobile 4-Column Layout)
+   11. Responsive Breakpoints (Collections Grid & Layout)
    -------------------------------------------------------------------------- */
 /* Large Tablet (1024px) */
 @media (max-width: 1100px) {
   .collections-grid {
     grid-template-columns: repeat(4, 1fr);
-    gap: 2.5rem 1.4rem;
+    gap: 2.6rem 1.6rem;
   }
   .circle-image-wrapper {
-    width: 115px;
-    height: 115px;
+    width: 140px;
+    height: 140px;
   }
   .category-name {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
   }
 }
 
 /* Medium Tablet & iPad (768px - 991px) */
 @media (max-width: 850px) {
   .shop-by-collection {
-    padding: 3.5rem 0 3.5rem;
+    padding: 3rem 0 3.5rem;
   }
-  .section-title {
-    font-size: 1.4rem;
-    letter-spacing: 0.14em;
+  .collections-intro-header {
+    margin-bottom: 2.2rem;
+  }
+  .collections-intro-text {
+    font-size: 0.9rem;
   }
   .collections-grid {
     grid-template-columns: repeat(4, 1fr);
-    gap: 2rem 1rem;
+    gap: 2.2rem 1.2rem;
   }
   .circle-image-wrapper {
-    width: 100px;
-    height: 100px;
+    width: 125px;
+    height: 125px;
+  }
+  .category-name {
+    font-size: 0.98rem;
+  }
+  .flourish-line {
+    width: 18px;
+  }
+}
+
+/* Mobile View (<= 640px): 2-Column Responsive Grid */
+@media (max-width: 640px) {
+  .shop-by-collection {
+    padding: 2.5rem 0 3rem;
+  }
+  .collections-intro-header {
+    margin-bottom: 1.8rem;
+  }
+  .collections-intro-text {
+    font-size: 0.84rem;
+    line-height: 1.55;
+    padding: 0 0.5rem;
+  }
+  .collections-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1.1rem;
+  }
+  .circle-image-wrapper {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 0.65rem;
+  }
+  .category-name {
+    font-size: 0.95rem;
+  }
+  .flourish-line {
+    width: 16px;
+  }
+}
+
+/* Extra Small Mobile View (< 380px) */
+@media (max-width: 380px) {
+  .collections-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem 0.8rem;
+  }
+  .circle-image-wrapper {
+    width: 105px;
+    height: 105px;
   }
   .category-name {
     font-size: 0.88rem;
-  }
-  .category-type {
-    font-size: 0.76rem;
-  }
-  .modal-content-grid {
-    grid-template-columns: 1fr;
-  }
-  .modal-img-box {
-    height: 220px;
-    min-height: auto;
-  }
-}
-
-/* Mobile View (<= 640px): 4-Column Layout in a Single Row */
-@media (max-width: 640px) {
-  .shop-by-collection {
-    padding: 2.5rem 0 2.5rem;
-  }
-  .section-title-wrapper {
-    gap: 0.6rem;
-  }
-  .title-line {
-    min-width: 15px;
-  }
-  .section-title {
-    font-size: 1.05rem;
-    letter-spacing: 0.08em;
-  }
-  .section-header {
-    margin-bottom: 1.8rem;
-  }
-  /* Enforce 4 Columns per Row on Mobile View */
-  .collections-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.2rem 0.4rem;
-  }
-  .circle-image-wrapper {
-    width: 72px;
-    height: 72px;
-    padding: 2px;
-    margin-bottom: 0.5rem;
-  }
-  .category-name {
-    font-size: 0.72rem;
-    line-height: 1.2;
-  }
-  .category-type {
-    font-size: 0.62rem;
-  }
-}
-
-/* Extra Small Mobile View (< 400px): Preserves 4-Column Single Row Layout */
-@media (max-width: 400px) {
-  .collections-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem 0.3rem;
-  }
-  .circle-image-wrapper {
-    width: 66px;
-    height: 66px;
-    padding: 2px;
-  }
-  .category-name {
-    font-size: 0.68rem;
-  }
-  .category-type {
-    font-size: 0.58rem;
-  }
 }
 
 /* --------------------------------------------------------------------------
