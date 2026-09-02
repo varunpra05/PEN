@@ -2334,29 +2334,97 @@ ul {
   background-color: var(--color-bg-white);
 }
 
-/* Breadcrumb Navigation */
-.breadcrumb-nav {
+/* Breadcrumb Navigation Bar (Matching Reference Design Exactly) */
+.breadcrumb-bar {
+  background-color: #faf6f0;
+  border-top: 1px solid rgba(230, 217, 194, 0.45);
+  border-bottom: 1px solid rgba(230, 217, 194, 0.45);
+  padding: 12px 0;
+  width: 100%;
+}
+
+.breadcrumb-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.breadcrumb-nav,
+.pdp-breadcrumb {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.8rem;
-  color: var(--color-text-secondary);
-  margin-bottom: 1.5rem;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  gap: 0.65rem;
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13.5px;
+  line-height: 1.4;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  margin: 0;
 }
 
-.breadcrumb-nav a {
-  color: var(--color-text-secondary);
+.breadcrumb-nav::-webkit-scrollbar,
+.pdp-breadcrumb::-webkit-scrollbar {
+  display: none;
+}
+
+.breadcrumb-link,
+.breadcrumb-nav a,
+.pdp-breadcrumb a {
+  color: #635850;
   text-decoration: none;
+  font-weight: 400;
   transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
 }
 
-.breadcrumb-nav a:hover {
-  color: var(--color-burgundy);
+.breadcrumb-link:hover,
+.breadcrumb-nav a:hover,
+.pdp-breadcrumb a:hover {
+  color: #3a0b13;
+  text-decoration: underline;
 }
 
+.breadcrumb-sep,
+.pdp-breadcrumb-sep,
 .breadcrumb-separator {
-  color: #c5a059;
-  font-size: 0.75rem;
+  color: #b5a89e;
+  font-weight: 300;
+  font-size: 13px;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.breadcrumb-current,
+.pdp-breadcrumb-active,
+.breadcrumb-active {
+  color: #a45831;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  display: inline-flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .breadcrumb-bar {
+    padding: 10px 0;
+  }
+  .breadcrumb-container {
+    padding: 0 1rem;
+  }
+  .breadcrumb-nav,
+  .pdp-breadcrumb {
+    font-size: 12.5px;
+    gap: 0.5rem;
+  }
+  .breadcrumb-sep,
+  .pdp-breadcrumb-sep {
+    font-size: 12px;
+  }
 }
 
 /* Shop Header Bar */
@@ -3194,36 +3262,6 @@ ul {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
-}
-
-/* Breadcrumb */
-.pdp-breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.8rem;
-  color: #7a7167;
-  margin-bottom: 2rem;
-}
-
-.pdp-breadcrumb a {
-  color: #7a7167;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.pdp-breadcrumb a:hover {
-  color: var(--color-burgundy);
-}
-
-.pdp-breadcrumb-sep {
-  color: #c5a059;
-  font-size: 0.75rem;
-}
-
-.pdp-breadcrumb-active {
-  color: var(--color-burgundy);
-  font-weight: 600;
 }
 
 /* PDP Main 2-Column Section */
