@@ -988,14 +988,37 @@ function loadCats() {
   const raw = localStorage.getItem(LS_CATS);
   if (raw) return JSON.parse(raw);
   const seed = [
-    { id: "c1", name: "Traditional", image: "images/traditional.jpg" },
-    { id: "c2", name: "Bridal", image: "images/bridal.jpg" },
-    { id: "c3", name: "Kundan", image: "images/kundan.jpg" },
-    { id: "c4", name: "Meenakari", image: "images/meenakari.jpg" },
-    { id: "c5", name: "Pearl", image: "images/pearl.jpg" },
-    { id: "c6", name: "Glass", image: "images/glass.jpg" },
-    { id: "c7", name: "Kids", image: "images/kids.jpg" },
-    { id: "c8", name: "Gold Plated", image: "images/goldplated.jpg" }
+    { id: "traditional", name: "Traditional Bangles", image: "images/traditional.jpg" },
+    { id: "bridal", name: "Bridal Bangles", image: "images/bridal.jpg" },
+    { id: "kundan", name: "Kundan Bangles", image: "images/kundan.jpg" },
+    { id: "meenakari", name: "Meenakari Bangles", image: "images/meenakari.jpg" },
+    { id: "pearl", name: "Pearl Bangles", image: "images/pearl.jpg" },
+    { id: "stone", name: "Stone Bangles", image: "images/traditional.jpg" },
+    { id: "lac", name: "Lac Bangles", image: "images/lac.jpg" },
+    { id: "oxidised", name: "Oxidised Bangles", image: "images/oxidised.jpg" },
+    { id: "kids", name: "Kids Jewellery", image: "images/kids.jpg" },
+    { id: "gold-plated", name: "Gold Plated", image: "images/goldplated.jpg" },
+    { id: "bangles", name: "Bangles", image: "images/traditional.jpg" },
+    { id: "bracelets", name: "Bracelets", image: "images/col_kundan.jpg" },
+    { id: "rings", name: "Rings", image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=600&auto=format&fit=crop" },
+    { id: "necklaces", name: "Necklaces", image: "images/bridal.jpg" },
+    { id: "earrings", name: "Earrings", image: "images/meenakari.jpg" },
+    { id: "mangalsutra", name: "Mangalsutra", image: "images/col_bridal.jpg" },
+    { id: "anklets", name: "Anklets", image: "images/oxidised.jpg" },
+    { id: "nose-pins", name: "Nose Pins", image: "images/lac.jpg" },
+    { id: "pendants", name: "Pendants", image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=600&auto=format&fit=crop" },
+    { id: "mens", name: "Men's Jewellery", image: "https://images.unsplash.com/photo-1611652022419-a9419f74343d?q=80&w=600&auto=format&fit=crop" },
+    { id: "gift-sets", name: "Gift Sets", image: "images/kundan.jpg" },
+    { id: "gold", name: "Gold Jewellery", image: "images/traditional.jpg" },
+    { id: "silver", name: "Silver Jewellery", image: "images/oxidised.jpg" },
+    { id: "polki", name: "Polki Jewellery", image: "images/bridal.jpg" },
+    { id: "beads", name: "Beads Jewellery", image: "images/meenakari.jpg" },
+    { id: "gemstone", name: "Gemstone Jewellery", image: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?q=80&w=600&auto=format&fit=crop" },
+    { id: "ad", name: "American Diamond", image: "images/col_traditional.jpg" },
+    { id: "temple", name: "Temple Bangles", image: "images/traditional.jpg" },
+    { id: "designer", name: "Designer Cuffs", image: "images/col_kundan.jpg" },
+    { id: "minimal", name: "Minimal Bangles", image: "images/col_bridal.jpg" },
+    { id: "glass", name: "Glass Bangles", image: "images/glass.jpg" }
   ];
   saveCats(seed);
   return seed;
@@ -1006,14 +1029,14 @@ function loadProds() {
   const raw = localStorage.getItem(LS_PRODS);
   if (raw) return JSON.parse(raw);
   const seed = [
-    { id: "p1", name: "Traditional Silk Thread Bangles", category: "c1", price: 999, stock: 24, rating: 5, image: "images/traditional.jpg", desc: "Handcrafted traditional bangles with rich silk embroidery." },
-    { id: "p2", name: "Royal Bridal Chura Bangles Set", category: "c2", price: 1999, stock: 12, rating: 5, image: "images/bridal.jpg", desc: "Exclusive royal bridal chura set designed with uncut stones." },
-    { id: "p3", name: "Ornate Kundan Jadau Kada Pair", category: "c3", price: 1499, stock: 18, rating: 5, image: "images/kundan.jpg", desc: "Timeless 22K gold-plated Kundan work kada pair." },
-    { id: "p4", name: "Vibrant Rajasthani Meenakari Bangles", category: "c4", price: 1299, stock: 15, rating: 5, image: "images/meenakari.jpg", desc: "Hand-painted meenakari bangles with floral motifs." },
-    { id: "p5", name: "Classic Pearl Beaded Gold Bangles", category: "c5", price: 1099, stock: 20, rating: 5, image: "images/pearl.jpg", desc: "Pure freshwater pearl embellishments on gold-toned copper." },
-    { id: "p6", name: "Artisanal Glass Churi Set", category: "c6", price: 699, stock: 45, rating: 4, image: "images/glass.jpg", desc: "Glossy festive glass bangles with shimmering accents." },
-    { id: "p7", name: "Gentle Kids Festive Bangles", category: "c7", price: 599, stock: 30, rating: 5, image: "images/kids.jpg", desc: "Smooth lightweight bangles specially designed for kids." },
-    { id: "p8", name: "22K Gold Plated Kada", category: "c8", price: 1199, stock: 14, rating: 5, image: "images/goldplated.jpg", desc: "Premium anti-tarnish 22K gold finish everyday kada." }
+    { id: "p1", name: "Traditional Silk Thread Bangles", category: "traditional", price: 999, stock: 24, rating: 5, image: "images/traditional.jpg", desc: "Handcrafted traditional bangles with rich silk embroidery." },
+    { id: "p2", name: "Royal Bridal Chura Bangles Set", category: "bridal", price: 1999, stock: 12, rating: 5, image: "images/bridal.jpg", desc: "Exclusive royal bridal chura set designed with uncut stones." },
+    { id: "p3", name: "Ornate Kundan Jadau Kada Pair", category: "kundan", price: 1499, stock: 18, rating: 5, image: "images/kundan.jpg", desc: "Timeless 22K gold-plated Kundan work kada pair." },
+    { id: "p4", name: "Vibrant Rajasthani Meenakari Bangles", category: "meenakari", price: 1299, stock: 15, rating: 5, image: "images/meenakari.jpg", desc: "Hand-painted meenakari bangles with floral motifs." },
+    { id: "p5", name: "Classic Pearl Beaded Gold Bangles", category: "pearl", price: 1099, stock: 20, rating: 5, image: "images/pearl.jpg", desc: "Pure freshwater pearl embellishments on gold-toned copper." },
+    { id: "p6", name: "Artisanal Glass Churi Set", category: "glass", price: 699, stock: 45, rating: 4, image: "images/glass.jpg", desc: "Glossy festive glass bangles with shimmering accents." },
+    { id: "p7", name: "Gentle Kids Festive Bangles", category: "kids", price: 599, stock: 30, rating: 5, image: "images/kids.jpg", desc: "Smooth lightweight bangles specially designed for kids." },
+    { id: "p8", name: "22K Gold Plated Kada", category: "gold-plated", price: 1199, stock: 14, rating: 5, image: "images/goldplated.jpg", desc: "Premium anti-tarnish 22K gold finish everyday kada." }
   ];
   saveProds(seed);
   return seed;
@@ -1054,8 +1077,9 @@ let customersData = loadCusts();
 function uid(prefix) { return prefix + "_" + Date.now() + "_" + Math.floor(Math.random() * 1000); }
 function rupee(n) { return "₹" + Number(n || 0).toLocaleString("en-IN"); }
 function catName(id) {
-  const c = categories.find(item => item.id === id);
-  return c ? c.name : "Uncategorized";
+  if (!id) return "Uncategorized";
+  const c = categories.find(item => item.id.toLowerCase() === id.toLowerCase() || item.name.toLowerCase() === id.toLowerCase());
+  return c ? c.name : id.charAt(0).toUpperCase() + id.slice(1);
 }
 
 /* ================= Toast Notification ================= */
@@ -1122,7 +1146,7 @@ function fillCategorySelects() {
 
   prodCatSelect.innerHTML = categories.map(c => `<option value="${c.id}">${c.name}</option>`).join("");
   filterCatSelect.innerHTML = '<option value="all">All Categories</option>' + categories.map(c => `<option value="${c.id}">${c.name}</option>`).join("");
-  filterCatSelect.value = prevFilter;
+  if (prevFilter) filterCatSelect.value = prevFilter;
 }
 
 /* ================= Dashboard Rendering ================= */
@@ -1167,12 +1191,13 @@ function stockBadge(stock) {
 /* ================= Products Rendering ================= */
 function renderProducts() {
   fillCategorySelects();
-  const search = (document.getElementById("prodSearch").value || "").toLowerCase();
-  const filterCat = document.getElementById("prodFilterCat").value || "all";
+  const search = (document.getElementById("prodSearch").value || "").toLowerCase().trim();
+  const filterCat = (document.getElementById("prodFilterCat").value || "all").toLowerCase().trim();
 
   const filtered = productsData.filter(p => {
-    const matchSearch = p.name.toLowerCase().includes(search);
-    const matchCat = filterCat === "all" || p.category === filterCat;
+    const matchSearch = !search || (p.name || "").toLowerCase().includes(search) || (p.desc || "").toLowerCase().includes(search);
+    const pCat = (p.category || "").toLowerCase().trim();
+    const matchCat = filterCat === "all" || pCat === filterCat || pCat.includes(filterCat) || filterCat.includes(pCat);
     return matchSearch && matchCat;
   });
 
@@ -1223,6 +1248,8 @@ const productModal = document.getElementById("productModalOverlay");
 function openProductModal(editId) {
   fillCategorySelects();
   document.getElementById("prodId").value = editId || "";
+  const activeFilter = document.getElementById("prodFilterCat").value;
+
   if (editId) {
     const p = productsData.find(x => x.id === editId);
     document.getElementById("productModalTitle").textContent = "Edit Product";
@@ -1239,6 +1266,10 @@ function openProductModal(editId) {
     ["prodName", "prodPrice", "prodStock", "prodRating", "prodImage", "prodDesc"].forEach(id => {
       document.getElementById(id).value = "";
     });
+    // Pre-select active category filter if one is chosen!
+    if (activeFilter && activeFilter !== "all") {
+      document.getElementById("prodCategory").value = activeFilter;
+    }
     document.getElementById("prodImgPreview").style.display = "none";
   }
   productModal.classList.add("open");
@@ -1266,7 +1297,7 @@ document.getElementById("productSaveBtn").addEventListener("click", () => {
     price: Number(price),
     stock: Number(document.getElementById("prodStock").value) || 0,
     rating: Math.min(5, Math.max(1, Number(document.getElementById("prodRating").value) || 5)),
-    image: document.getElementById("prodImage").value.trim() || "images/logo.jpg",
+    image: document.getElementById("prodImage").value.trim() || "images/traditional.jpg",
     desc: document.getElementById("prodDesc").value.trim()
   };
 
@@ -1276,8 +1307,8 @@ document.getElementById("productSaveBtn").addEventListener("click", () => {
     showToast("Product updated successfully");
   } else {
     data.id = uid("p");
-    productsData.push(data);
-    showToast("New product added to catalog");
+    productsData.unshift(data);
+    showToast(`New product added to ${catName(category)} category`);
   }
   saveProds(productsData);
   closeProductModal();

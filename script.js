@@ -1077,6 +1077,109 @@ window.PRODUCTS_DATA = {
   }
 };
 
+/* ==========================================================================
+   Admin Products Storefront Sync Engine
+   ========================================================================== */
+function getAdminProducts() {
+  try {
+    const raw = localStorage.getItem("bm_admin_products");
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (Array.isArray(parsed)) return parsed;
+    }
+  } catch (e) {
+    console.error("Error loading admin products:", e);
+  }
+  return [];
+}
+
+function syncAdminProductsToStore() {
+  const adminProducts = getAdminProducts();
+  if (!adminProducts || !adminProducts.length) return;
+
+  adminProducts.forEach(p => {
+    const catSlug = (p.category || "traditional").toLowerCase().trim();
+    const catDisplayName = catSlug.charAt(0).toUpperCase() + catSlug.slice(1);
+
+    // 1. Register in window.PRODUCTS_DATA for PDP & Quick Modals
+    window.PRODUCTS_DATA[p.id] = {
+      id: p.id,
+      title: p.name,
+      category: `${catDisplayName} Jewellery`,
+      categorySlug: catSlug,
+      price: `₹${Number(p.price || 0).toLocaleString('en-IN')}`,
+      originalPrice: `₹${Math.round((Number(p.price) || 0) * 1.4).toLocaleString('en-IN')}`,
+      discount: "30% OFF",
+      rating: "★".repeat(Number(p.rating) || 5),
+      reviewsCount: "(Verified)",
+      description: p.desc || `${p.name} - Handcrafted royal designer jewelry made with premium 22K gold finish.`,
+      material: "Pure Brass & Semi-Precious Accents",
+      stoneType: catDisplayName,
+      finish: "22K Micro Gold Plated",
+      occasion: "Bridal, Festive, Parties",
+      packContains: "1 Unit / Pair",
+      sizes: ["2.4", "2.6", "2.8"],
+      mainImage: p.image || "images/traditional.jpg",
+      images: [p.image || "images/traditional.jpg", "images/bridal.jpg", "images/kundan.jpg"]
+    };
+
+    // 2. Inject into shop.html #shopCardsGrid
+    const shopGrid = document.getElementById('shopCardsGrid');
+    if (shopGrid) {
+      let existing = shopGrid.querySelector(`[data-id="${p.id}"]`);
+      if (!existing) {
+        const cardHtml = `
+          <div class="shop-item-card" data-id="${p.id}" data-category="${catSlug}">
+            <div class="shop-item-img-wrap">
+              <img src="${p.image || 'images/traditional.jpg'}" alt="${p.name}" loading="lazy" onerror="this.src='images/logo.jpg'">
+              <button class="shop-item-wishlist-btn" aria-label="Add to wishlist">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              </button>
+            </div>
+            <div class="shop-item-body">
+              <h3 class="shop-item-title">${p.name}</h3>
+              <div class="shop-item-price-row">
+                <span class="shop-item-curr-price">₹${Number(p.price || 0).toLocaleString('en-IN')}</span>
+                <span class="shop-item-orig-price">₹${Math.round((Number(p.price) || 0) * 1.4).toLocaleString('en-IN')}</span>
+                <span class="shop-item-discount-pill">30% OFF</span>
+              </div>
+              <div class="shop-item-rating-row">
+                <span class="shop-item-stars">${'★'.repeat(Number(p.rating) || 5)}</span>
+                <span class="shop-item-reviews-count">(New)</span>
+              </div>
+            </div>
+          </div>
+        `;
+        shopGrid.insertAdjacentHTML('afterbegin', cardHtml);
+      }
+    }
+
+    // 3. Inject into index.html #best-selling .products-grid
+    const bestSellingGrid = document.querySelector('#best-selling .products-grid');
+    if (bestSellingGrid) {
+      let existing = bestSellingGrid.querySelector(`[data-id="${p.id}"]`);
+      if (!existing) {
+        const bestCardHtml = `
+          <div class="product-card" data-id="${p.id}" data-category="${catSlug}">
+            <div class="product-img-wrapper">
+              <img src="${p.image || 'images/traditional.jpg'}" alt="${p.name}" loading="lazy" onerror="this.src='images/logo.jpg'">
+              <button class="wishlist-btn" aria-label="Add to wishlist">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.78-8.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              </button>
+            </div>
+            <div class="product-info">
+              <h4 class="product-title">${p.name}</h4>
+              <p class="product-price">₹${Number(p.price || 0).toLocaleString('en-IN')} <del style="color:#a8a29e; font-size:0.8rem; margin-left:4px;">₹${Math.round((Number(p.price) || 0) * 1.4).toLocaleString('en-IN')}</del></p>
+              <div class="product-rating">${'★'.repeat(Number(p.rating) || 5)}</div>
+            </div>
+          </div>
+        `;
+        bestSellingGrid.insertAdjacentHTML('afterbegin', bestCardHtml);
+      }
+    }
+  });
+}
+
 // Global Handler to make all Product Cards clickable
 document.addEventListener('click', (e) => {
   const card = e.target.closest('.product-card') || e.target.closest('.shop-item-card');
@@ -1091,9 +1194,66 @@ document.addEventListener('click', (e) => {
 });
 
 /* ==========================================================================
+   PDP (Product Detail Page) Dynamic Content Initializer
+   ========================================================================== */
+function initPDP() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const prodId = urlParams.get('id');
+  if (!prodId) return;
+
+  const product = window.PRODUCTS_DATA[prodId];
+  if (!product) return;
+
+  document.title = `${product.title} - Shree Raja Ram Bangles`;
+  
+  const titleEl = document.querySelector('.pdp-product-title');
+  if (titleEl) titleEl.textContent = product.title;
+
+  const currPriceEl = document.querySelector('.pdp-price-current');
+  if (currPriceEl) currPriceEl.textContent = product.price;
+
+  const origPriceEl = document.querySelector('.pdp-price-original');
+  if (origPriceEl) origPriceEl.textContent = product.originalPrice;
+
+  const discEl = document.querySelector('.pdp-discount-pill');
+  if (discEl) discEl.textContent = product.discount || 'Special Offer';
+
+  const descEl = document.querySelector('.pdp-description-text');
+  if (descEl) descEl.textContent = product.description;
+
+  const currentBreadcrumb = document.querySelector('.breadcrumb-current');
+  if (currentBreadcrumb) currentBreadcrumb.textContent = product.title;
+
+  const catBreadcrumb = document.querySelector('.breadcrumb-nav a:nth-last-child(2)');
+  if (catBreadcrumb && product.category) {
+    catBreadcrumb.textContent = product.category;
+    catBreadcrumb.href = `shop.html?category=${product.categorySlug || product.category.toLowerCase()}`;
+  }
+
+  const mainImg = document.getElementById('pdpMainImg');
+  if (mainImg && product.mainImage) {
+    mainImg.src = product.mainImage;
+    mainImg.alt = product.title;
+  }
+
+  const thumbs = document.querySelectorAll('.pdp-thumb-item img');
+  if (thumbs.length && product.images && product.images.length) {
+    thumbs.forEach((th, i) => {
+      if (product.images[i]) {
+        th.src = product.images[i];
+      }
+    });
+  }
+}
+
+/* ==========================================================================
    Shop Catalog Category Filtering, Sorting, & Mobile Drawer
    ========================================================================== */
 document.addEventListener('DOMContentLoaded', () => {
+  // Sync products from admin panel on page load
+  syncAdminProductsToStore();
+  initPDP();
+
   const desktopPills = document.querySelectorAll('#desktopCategoryPills .category-pill-btn');
   const mobileCatItems = document.querySelectorAll('#mobileCategorySlider .mobile-cat-item');
   const shopGrid = document.getElementById('shopCardsGrid');
@@ -1137,9 +1297,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Category Filter Function
   function filterCategory(cat) {
+    const normCat = (cat || 'all').toLowerCase().trim();
+
     // Update Desktop Pills active class
     desktopPills.forEach(pill => {
-      if (pill.dataset.category === cat) {
+      const pillCat = (pill.dataset.category || '').toLowerCase().trim();
+      if (pillCat === normCat || (normCat !== 'all' && (pillCat.includes(normCat) || normCat.includes(pillCat)))) {
         pill.classList.add('active');
       } else {
         pill.classList.remove('active');
@@ -1148,7 +1311,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Update Mobile Slider active class
     mobileCatItems.forEach(item => {
-      if (item.dataset.category === cat) {
+      const itemCat = (item.dataset.category || '').toLowerCase().trim();
+      if (itemCat === normCat || (normCat !== 'all' && (itemCat.includes(normCat) || normCat.includes(itemCat)))) {
         item.classList.add('active');
       } else {
         item.classList.remove('active');
@@ -1161,8 +1325,16 @@ document.addEventListener('DOMContentLoaded', () => {
       let visibleCount = 0;
 
       cards.forEach(card => {
-        const cardCat = card.dataset.category || '';
-        if (cat === 'all' || cardCat.includes(cat) || cat.includes(cardCat)) {
+        const cardCat = (card.dataset.category || '').toLowerCase().trim();
+        const cardTitle = (card.querySelector('.shop-item-title')?.textContent || '').toLowerCase();
+        
+        const isMatch = normCat === 'all' || 
+                        cardCat === normCat || 
+                        cardCat.includes(normCat) || 
+                        normCat.includes(cardCat) || 
+                        cardTitle.includes(normCat);
+
+        if (isMatch) {
           card.style.display = 'flex';
           visibleCount++;
         } else {
@@ -1170,7 +1342,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      const countText = cat === 'all' ? `Showing 1–24 of 240 products` : `Showing 1–${visibleCount} of ${visibleCount} products`;
+      const countText = normCat === 'all' ? `Showing 1–${visibleCount} of ${visibleCount} products` : `Showing ${visibleCount} product${visibleCount === 1 ? '' : 's'} in ${cat}`;
       if (desktopResultCount) desktopResultCount.textContent = countText;
       if (mobileResultCount) mobileResultCount.textContent = countText;
     }
