@@ -178,15 +178,19 @@ ul {
   align-items: center;
   user-select: none;
   text-decoration: none;
+  max-height: var(--header-height);
+  flex-shrink: 0;
 }
 
 .header-logo-img {
   height: 52px;
+  max-height: 52px;
   width: auto;
   max-width: 220px;
   object-fit: contain;
   display: block;
   border-radius: 4px;
+  flex-shrink: 0;
   transition: transform 0.3s ease;
 }
 
@@ -1607,6 +1611,7 @@ ul {
   }
   .category-name {
     font-size: 0.88rem;
+  }
 }
 
 /* --------------------------------------------------------------------------
