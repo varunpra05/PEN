@@ -4114,7 +4114,7 @@ ul {
   display: inline-block;
 }
 
-/* Responsive Breakpoints for Collections Page Grid */
+/* Responsive Breakpoints for Collections Page Grid (Strictly 3 Columns on Mobile & Tablet) */
 @media (max-width: 1199px) {
   .collections-page-grid {
     grid-template-columns: repeat(6, 1fr);
@@ -4144,20 +4144,20 @@ ul {
   }
   .collections-page-grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem 1.4rem;
+    gap: 2.4rem 1.2rem;
   }
   .collections-page-grid .circle-image-wrapper {
-    width: 125px;
-    height: 125px;
+    width: 110px;
+    height: 110px;
   }
   .collections-page-grid .category-name {
-    font-size: 1.08rem;
+    font-size: 1.02rem;
   }
 }
 
 @media (max-width: 640px) {
   .collections-page-wrapper {
-    padding: 2rem 0.75rem 3.5rem 0.75rem;
+    padding: 2rem 0.5rem 3.5rem 0.5rem;
   }
   .collections-page-hero-header {
     margin-bottom: 2rem;
@@ -4167,15 +4167,15 @@ ul {
   }
   .collections-page-grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem 0.6rem;
+    gap: 1.8rem 0.45rem;
   }
   .collections-page-grid .circle-image-wrapper {
-    width: 90px;
-    height: 90px;
-    margin-bottom: 0.6rem;
+    width: 84px;
+    height: 84px;
+    margin-bottom: 0.5rem;
   }
   .collections-page-grid .category-name {
-    font-size: 0.88rem;
+    font-size: 0.84rem;
     line-height: 1.2;
   }
   .collections-page-grid .flourish-line {
@@ -4186,17 +4186,25 @@ ul {
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 380px) {
   .collections-page-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.8rem 0.8rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.3rem 0.25rem;
   }
   .collections-page-grid .circle-image-wrapper {
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
+    margin-bottom: 0.35rem;
   }
   .collections-page-grid .category-name {
-    font-size: 0.95rem;
+    font-size: 0.72rem;
+    line-height: 1.15;
+  }
+  .collections-page-grid .flourish-line {
+    width: 9px;
+  }
+  .collections-page-grid .flourish-diamond {
+    font-size: 4px;
   }
 }
 
