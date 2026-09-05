@@ -1973,8 +1973,8 @@ ul {
 
 .bestsellers-header {
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
   position: relative;
   margin-bottom: 2.8rem;
   width: 100%;
