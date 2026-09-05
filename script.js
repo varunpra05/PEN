@@ -1176,6 +1176,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Check URL query parameters for category filter
+  const urlCategory = new URLSearchParams(window.location.search).get('category');
+  if (urlCategory) {
+    filterCategory(urlCategory);
+  }
+
   // Desktop Pills Click
   desktopPills.forEach(pill => {
     pill.addEventListener('click', () => {
